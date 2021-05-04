@@ -1,117 +1,122 @@
-$font-main: "Asap", sans-serif;
-$font-second: "Josefin Slab", serif;
+:root {
+  --gray-color: #403F4B;
+  --yellow-color: #ffec97;
+  --red-color: #ff6a71;
+  --white-color: #fff;
+  --black-color: #000;
+  --lightgray-color: #888;
+  --main-font: 'New Rocker', cursive;
+  --sub-font: 'Open Sans', sans-serif;
+}
+html {
+  scroll-behavior: smooth;
+  overflow-y: scroll;
+}
 html,
-body {
-  box-sizing: border-box;
+body * {
+  font-size: 62.5%;
   padding: 0;
   margin: 0;
-  font-size: 62.5%;
-  color: white;
-  font-family: $font-second;
-  font-weight: 500;
+  box-sizing: border-box;
+  border-radius: 1.5rem;
 }
 body {
-  background-color: #111;
+  background: var(--gray-color);
 }
-
-.header {
-  font-size: 5.2rem;
-
-  margin: 3rem auto;
-  text-align: center;
-}
-.top-rated {
-  margin: 1rem auto 2rem auto;
-  text-align: center;
-  font-size: 3.8rem;
-}
-.movie-grid {
+.navbox {
+  max-width: 100%;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  width: 90vw;
-  background-color: white;
-  margin: 1rem auto;
-  padding: 3rem auto;
-  align-items: center;
+  justify-content: center;
 }
-.movie-card {
-  height: 65vh;
-  width: 20vw;
-  margin: 0 auto;
-  position: relative;
-  margin: 2rem auto;
+nav {
+  min-width: 50%;
+  text-align: center;
+  background-color: var(--yellow-color);
+  height: 5rem;
+  border-radius: 50rem;
+    ul {
+    list-style: none;
+      li {
+      display: inline-block;
+      font-family: var(--sub-font);
+      margin: 1.2rem 0;
+      border-right: .1rem solid #000;
+      border-radius: 0;
+        a {
+        color: #000;
+        text-decoration: none;
+        font-size: 1.65rem;
+        padding: 0 3.9rem;
+        letter-spacing: 0.1rem;
+        font-weight: 500;
+        transition: all 0.3s;
+      }
+    }
+  }
 }
-.movie-card-front {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  /* background-image: url("https://image.tmdb.org/t/p/w300/r7vmZjiyZw9rpJMQJdXpjgiCOk9.jpg"); */
-  background-position: center;
-  z-index: 3;
-  transition: all 0.3s;
+nav li:last-child {
+  border-right: none;
 }
-.poster {
-  width: 100%;
-  height: 100%;
+nav a:hover{
+  color: #ff000d;
 }
-.movie-card-back {
-  transition: all 0.3s;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-
-  display: none;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  color: white;
-  background-color: rgba(33, 33, 33, 0.8);
-  width: 100%;
-  height: 100%;
+.container {
+  margin: 0 10%;
+  margin-top: 5rem;
+  width: 80%;
+  min-height: 50rem;
+  background: var(--red-color);
+  padding: 4rem;
 }
-.movie-card-header {
-  font-size: 2.4rem;
-  text-transform: uppercase;
-  margin: 1rem auto;
-
+h1 {
+  font: 5rem var(--main-font);
+  color: var(--yellow-color);
   text-align: center;
 }
-.score-box,
-.release-box {
-  text-align: center;
+.logo {
+  font: 7rem var(--main-font);
+  color: var(--white-color);
+  padding: 2rem;
 }
-
-.movie-genres {
+.story, .title {
+  font: 1.7rem var(--sub-font);
+  color: var(--black-color);
+  margin-bottom: .5rem;
+}
+#title, .title, #story, .story {
+  display: block;
+}
+#title, #story {
+  border: .1rem solid var(--lightgray-color);
+  background-color: var(--white-color);
+  padding: 1rem;
   font-size: 1.6rem;
-  padding: 1rem 2rem;
-  display: flex;
-  width: 100%;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  align-items: center;
+  font-family: var(--sub-font);
 }
-.movie-genre {
-  list-style: none;
+#title {
+  min-height: 2rem;
+  width: 25rem;
+  margin-bottom: 2rem;
 }
-.user-score {
-  font-size: 2rem;
+#story {
+  min-height: 50rem;
 }
-.release-date {
-  font-size: 2rem;
+#title:focus, 
+#story:focus {
+  outline: none;
+  border: .1rem solid var(--gray-color);
 }
-
-.movie-card:hover .movie-card-front {
-  z-index: 1;
+#title:empty::before,
+#story:empty::before {
+  color: var(--lightgray-color);
 }
-.movie-card:hover .movie-card-back {
-  z-index: 3;
-  display: flex;
+#title:empty::before {
+  content: 'Write a title for your story';
 }
-.test {
-  color: black;
-  font-size: 3rem;
+#story:empty::before {
+  content: 'Create your story (Pro tip: Remember to think of all the ways that players may act in the game!)';
+}
+#title:empty:focus::before,
+#story:empty:focus::before {
+  content: '';
 }
