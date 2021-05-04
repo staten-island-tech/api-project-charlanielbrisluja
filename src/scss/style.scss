@@ -5,6 +5,7 @@
   --white-color: #fff;
   --black-color: #000;
   --lightgray-color: #888;
+  --darkyellow-color: #d3bf68;
   --main-font: 'New Rocker', cursive;
   --sub-font: 'Open Sans', sans-serif;
 }
@@ -34,16 +35,18 @@ nav {
   background-color: var(--yellow-color);
   height: 5rem;
   border-radius: 50rem;
+  position: fixed;
+  box-shadow: 0 .5rem 2rem .1rem var(--darkyellow-color);
     ul {
     list-style: none;
       li {
       display: inline-block;
       font-family: var(--sub-font);
       margin: 1.2rem 0;
-      border-right: .1rem solid #000;
+      border-right: .1rem solid var(--black-color);
       border-radius: 0;
         a {
-        color: #000;
+        color: var(--black-color);
         text-decoration: none;
         font-size: 1.65rem;
         padding: 0 3.9rem;
@@ -62,7 +65,7 @@ nav a:hover{
 }
 .container {
   margin: 0 10%;
-  margin-top: 5rem;
+  margin-top: 10rem;
   width: 80%;
   min-height: 50rem;
   background: var(--red-color);
