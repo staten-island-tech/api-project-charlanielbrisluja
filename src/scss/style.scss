@@ -33,19 +33,21 @@ body {
 nav {
   min-width: 50%;
   background-color: var(--yellow-color);
-  height: 5rem;
   border-radius: 50rem;
   position: fixed;
   box-shadow: 0 .5rem 2rem .1rem var(--darkyellow-color);
   text-align: center;
+  vertical-align: center;
+  transition: all 0.3s;
     ul {
     list-style: none;
       li {
       display: inline-block;
       font-family: var(--sub-font);
-      margin: 1.2rem 0;
       border-right: .1rem solid var(--black-color);
       border-radius: 0;
+      transition: all 0.3s;
+      padding: 1.675rem 0;
         a {
         color: var(--black-color);
         text-decoration: none;
@@ -61,8 +63,13 @@ nav {
 nav li:last-child {
   border-right: none;
 }
-nav a:hover{
-  color: #ff000d;
+nav:hover li {
+  border-right: none;
+}
+nav li:hover,
+nav li:focus {
+  background-color: var(--darkyellow-color);
+  border-radius: 3rem;
 }
 .container {
   margin: 0 10%;
@@ -95,7 +102,7 @@ h1 {
   border: .1rem solid var(--lightgray-color);
   background-color: var(--white-color);
   padding: 1rem;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   font-family: var(--sub-font);
 }
 .textinput {

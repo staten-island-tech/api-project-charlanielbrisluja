@@ -1,43 +1,102 @@
+
 .search-box {
     width: 100%;
     display: flex;
     justify-content: center;
+    margin-bottom: 2rem;
 }
 .monster-search {
-    height: 3rem;
-    width: 20rem;
+    height: 4rem;
+    width: 30rem;
     border: .1rem solid var(--lightgray-color);
     padding: 1rem;
+    border-radius: 1rem;
+    margin-top: 2rem;
+    font-size: 1.4rem;
 }
 .monster-card {
-    height: 20rem;
-    width: 15rem;
-    background: linear-gradient(0deg, rgba(0,0,0,0.7) 0%, rgba(255,255,255,.7) 100%);;
+    height: 25rem;
+    width: 20rem;
+    border-radius: 1rem;
+    background: rgb(39,255,171);
+    background: linear-gradient(0deg, rgb(27, 182, 122) 0%, rgba(255,255,255,1) 100%);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
+    transition: all .3s;
 }
 .monster-img {
-    height: 20rem;
-    width: 15rem;
+    border-radius: 1rem;
+    min-height: 25rem;
+    width: 20rem;
+    transition: all .3s;
 }
-.monster-card:hover .monster-info{
+.monster-card:hover .monster-info,
+.monster-card:hover .name {
     display: block;
 }
 .monster-card:hover .monster-img{
     display: none;
 }
+.addbtn, .learnbtn {
+    height: 3.5rem;
+    line-height: 3.5rem;
+    padding: 0 2.5rem;
+    border: none;
+    border-radius: .5rem;
+    font-size: 1.3rem;
+    transition: all .3s;
+}
 .addbtn {
     background-color: var(--yellow-color);
     display: block;
 }
+.addbtn:hover {
+    box-shadow: 0 .5rem 1rem var(--yellow-color);
+}
+.learnbtn:hover {
+    box-shadow: 0 .5rem 1rem var(--white-color);
+}
+.addbtn:hover, .learnbtn:hover {
+    transform: translateY(-.3rem);
+    z-index: 1;
+}
 .monster-info {
     display: none;
     line-height: 150%;
+    transition: all .3s;
+    font-family: var(--sub-font);
+    padding: 1rem;
 }
 .name {
-    color: var(--white-color);
-    font: 1.6rem var(--sub-font);
+    font: 1.8rem var(--sub-font);
+    letter-spacing: .1rem;
+    font-weight: 900;
+    display: none;
+}
+.stats-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    font-size: 2rem;
+    font-weight: 900;
+    gap: .75rem;
+}
+.addbtn, .stats-grid {
+    margin-top: 1.5rem;
+}
+.learnbtn {
+    margin-top: .5rem;
+}
+.type, .size {
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+.size {
+    margin-top: .5rem;
+}
+.selected-box {
+    margin-top: 2rem;
 }
