@@ -6,3 +6,6 @@ window.addEventListener('beforeunload', function (e) {
     // Chrome requires returnValue to be set
     e.returnValue = '';
   });
+
+  // get url for image:
+  //  url(/api/monsters/${index})
