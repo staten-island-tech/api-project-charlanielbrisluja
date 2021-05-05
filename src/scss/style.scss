@@ -31,7 +31,6 @@ body {
 }
 nav {
   min-width: 50%;
-  text-align: center;
   background-color: var(--yellow-color);
   height: 5rem;
   border-radius: 50rem;
@@ -82,45 +81,45 @@ h1 {
   padding-top: 9rem;
   padding-bottom: 2rem;
 }
-.story, .title {
+.label {
   font: 1.7rem var(--sub-font);
   color: var(--black-color);
   margin-bottom: .5rem;
 }
-#title, .title, #story, .story {
+.textinput, .label, .textarea {
   display: block;
 }
-#title, #story {
+.textinput, .textarea {
   border: .1rem solid var(--lightgray-color);
   background-color: var(--white-color);
   padding: 1rem;
   font-size: 1.6rem;
   font-family: var(--sub-font);
 }
-#title {
+.textinput {
   min-height: 2rem;
   width: 25rem;
   margin-bottom: 2rem;
 }
-#story {
+.textarea {
   min-height: 50rem;
 }
-#title:focus, 
-#story:focus {
+.textinput:focus, 
+.textarea:focus {
   outline: none;
   border: .1rem solid var(--gray-color);
 }
-#title:empty::before,
-#story:empty::before {
+.textinput:empty::before,
+.textarea:empty::before {
   color: var(--lightgray-color);
 }
-#title:empty::before {
+.textinput:empty::before {
   content: 'Make a title for your story';
 }
-#story:empty::before {
+.textarea:empty::before {
   content: 'Write your one-shot story (Pro tip: Remember to think of all the ways that players may act in the game!)';
 }
-#title:empty:focus::before,
-#story:empty:focus::before {
+.textinput:empty:focus::before,
+.textarea:empty:focus::before {
   content: '';
 }
