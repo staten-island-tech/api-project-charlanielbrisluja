@@ -1,0 +1,43 @@
+.search-box {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.monster-search {
+    height: 3rem;
+    width: 20rem;
+    border: .1rem solid var(--lightgray-color);
+    padding: 1rem;
+}
+.monster-card {
+    height: 20rem;
+    width: 15rem;
+    background: linear-gradient(0deg, rgba(0,0,0,0.7) 0%, rgba(255,255,255,.7) 100%);;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.monster-img {
+    height: 20rem;
+    width: 15rem;
+}
+.monster-card:hover .monster-info{
+    display: block;
+}
+.monster-card:hover .monster-img{
+    display: none;
+}
+.addbtn {
+    background-color: var(--yellow-color);
+    display: block;
+}
+.monster-info {
+    display: none;
+    line-height: 150%;
+}
+.name {
+    color: var(--white-color);
+    font: 1.6rem var(--sub-font);
+}

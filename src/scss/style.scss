@@ -1,3 +1,4 @@
+@import "_monsters.scss";
 :root {
   --gray-color: #403F4B;
   --yellow-color: #ffec97;
@@ -36,6 +37,7 @@ nav {
   border-radius: 50rem;
   position: fixed;
   box-shadow: 0 .5rem 2rem .1rem var(--darkyellow-color);
+  text-align: center;
     ul {
     list-style: none;
       li {
