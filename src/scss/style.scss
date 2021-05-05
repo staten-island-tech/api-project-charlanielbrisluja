@@ -65,11 +65,11 @@ nav a:hover{
 }
 .container {
   margin: 0 10%;
-  margin-top: 10rem;
   width: 80%;
   min-height: 50rem;
   background: var(--red-color);
   padding: 4rem;
+  border: .2rem solid var(--black-color);
 }
 h1 {
   font: 5rem var(--main-font);
@@ -79,7 +79,8 @@ h1 {
 .logo {
   font: 7rem var(--main-font);
   color: var(--white-color);
-  padding: 2rem;
+  padding-top: 9rem;
+  padding-bottom: 2rem;
 }
 .story, .title {
   font: 1.7rem var(--sub-font);
@@ -114,10 +115,10 @@ h1 {
   color: var(--lightgray-color);
 }
 #title:empty::before {
-  content: 'Write a title for your story';
+  content: 'Make a title for your story';
 }
 #story:empty::before {
-  content: 'Create your story (Pro tip: Remember to think of all the ways that players may act in the game!)';
+  content: 'Write your one-shot story (Pro tip: Remember to think of all the ways that players may act in the game!)';
 }
 #title:empty:focus::before,
 #story:empty:focus::before {
