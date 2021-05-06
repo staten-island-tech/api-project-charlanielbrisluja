@@ -1,117 +1,133 @@
-$font-main: "Asap", sans-serif;
-$font-second: "Josefin Slab", serif;
+@import "_monsters.scss";
+:root {
+  --gray-color: #403F4B;
+  --yellow-color: #ffec97;
+  --red-color: #ff6a71;
+  --white-color: #fff;
+  --black-color: #000;
+  --lightgray-color: #888;
+  --darkyellow-color: #eed97c;
+  --main-font: 'New Rocker', cursive;
+  --sub-font: 'Montserrat', sans-serif;
+}
+html {
+  scroll-behavior: smooth;
+  overflow-y: scroll;
+}
 html,
-body {
-  box-sizing: border-box;
+body * {
+  font-size: 62.5%;
   padding: 0;
   margin: 0;
-  font-size: 62.5%;
-  color: white;
-  font-family: $font-second;
-  font-weight: 500;
+  box-sizing: border-box;
+  border-radius: 1rem;
 }
 body {
-  background-color: #111;
+  background: var(--gray-color);
 }
-
-.header {
-  font-size: 5.2rem;
-
-  margin: 3rem auto;
-  text-align: center;
-}
-.top-rated {
-  margin: 1rem auto 2rem auto;
-  text-align: center;
-  font-size: 3.8rem;
-}
-.movie-grid {
+.navbox {
+  max-width: 100%;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  width: 90vw;
-  background-color: white;
-  margin: 1rem auto;
-  padding: 3rem auto;
-  align-items: center;
+  justify-content: center;
 }
-.movie-card {
-  height: 65vh;
-  width: 20vw;
-  margin: 0 auto;
-  position: relative;
-  margin: 2rem auto;
+nav {
+  min-width: 40%;
+  background-color: var(--yellow-color);
+  border-radius: 50rem;
+  position: fixed;
+  box-shadow: 0 .5rem 2rem .1rem var(--darkyellow-color);
+  text-align: center;
+  vertical-align: center;
+  transition: all 0.5s;
+    ul {
+    list-style: none;
+      li {
+      display: inline-block;
+      font-family: var(--sub-font);
+      border-right: .01rem solid var(--black-color);
+      border-radius: 0;
+      transition: all 0.5s;
+      padding: 1.675rem 0;
+        a {
+        color: var(--black-color);
+        text-decoration: none;
+        font-size: 1.65rem;
+        padding: 0 5rem;
+        letter-spacing: 0.1rem;
+        font-weight: 500;
+      }
+    }
+  }
 }
-.movie-card-front {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  /* background-image: url("https://image.tmdb.org/t/p/w300/r7vmZjiyZw9rpJMQJdXpjgiCOk9.jpg"); */
-  background-position: center;
-  z-index: 3;
-  transition: all 0.3s;
+nav li:last-child {
+  border-right: none;
 }
-.poster {
-  width: 100%;
-  height: 100%;
+nav:hover li {
+  border-right: none;
 }
-.movie-card-back {
-  transition: all 0.3s;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-
-  display: none;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  color: white;
-  background-color: rgba(33, 33, 33, 0.8);
-  width: 100%;
-  height: 100%;
+nav li:hover,
+nav li:focus {
+  background-color: var(--darkyellow-color);
+  border-radius: 3rem;
 }
-.movie-card-header {
-  font-size: 2.4rem;
-  text-transform: uppercase;
-  margin: 1rem auto;
-
+.container {
+  margin: 0 10%;
+  width: 80%;
+  min-height: 50rem;
+  background: var(--red-color);
+  padding: 4rem;
+  border: .1rem solid var(--black-color);
+}
+h1 {
+  font: 5rem var(--main-font);
+  color: var(--yellow-color);
   text-align: center;
 }
-.score-box,
-.release-box {
-  text-align: center;
+.logo {
+  font: 7rem var(--main-font);
+  color: var(--white-color);
+  padding-top: 9rem;
+  padding-bottom: 2rem;
 }
-
-.movie-genres {
-  font-size: 1.6rem;
-  padding: 1rem 2rem;
-  display: flex;
-  width: 100%;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  align-items: center;
+.label {
+  font: 900 1.6rem var(--sub-font);
+  color: var(--black-color);
+  margin-bottom: .5rem;
 }
-.movie-genre {
-  list-style: none;
+.textinput, .label, .textarea {
+  display: block;
 }
-.user-score {
-  font-size: 2rem;
+.textinput, .textarea {
+  border: .1rem solid var(--lightgray-color);
+  background-color: var(--white-color);
+  padding: 1rem;
+  font-size: 1.4rem;
+  font-family: var(--sub-font);
 }
-.release-date {
-  font-size: 2rem;
+.textinput {
+  min-height: 2rem;
+  width: 25rem;
+  margin-bottom: 2rem;
 }
-
-.movie-card:hover .movie-card-front {
-  z-index: 1;
+.textarea {
+  min-height: 50rem;
 }
-.movie-card:hover .movie-card-back {
-  z-index: 3;
-  display: flex;
+.textinput:focus, 
+.textarea:focus {
+  outline: none;
+  border: .1rem solid var(--gray-color);
 }
-.test {
-  color: black;
-  font-size: 3rem;
+.textinput:empty::before,
+.textarea:empty::before {
+  color: var(--lightgray-color);
+}
+.textinput:empty::before {
+  content: 'Make a title for your story';
+}
+.textarea:empty::before {
+  content: 'Write your one-shot story (Pro tip: Remember to think of all the ways that players may act in the game!)';
+}
+.textinput:empty:focus::before,
+.textarea:empty:focus::before {
+  content: '';
 }
