@@ -9,3 +9,8 @@ window.addEventListener('beforeunload', function (e) {
 
   // get url for image:
   //  url(/api/monsters/${index})
+
+  //this is a demo thing
+  DOMSelectors.addButton.addEventListener('click', function () {
+      DOMSelectors.selectedBox.appendChild(DOMSelectors.monsterCard);
+  });

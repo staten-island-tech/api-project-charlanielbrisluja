@@ -6,9 +6,9 @@
   --white-color: #fff;
   --black-color: #000;
   --lightgray-color: #888;
-  --darkyellow-color: #d3bf68;
+  --darkyellow-color: #eed97c;
   --main-font: 'New Rocker', cursive;
-  --sub-font: 'Open Sans', sans-serif;
+  --sub-font: 'Montserrat', sans-serif;
 }
 html {
   scroll-behavior: smooth;
@@ -20,7 +20,7 @@ body * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  border-radius: 1.5rem;
+  border-radius: 1rem;
 }
 body {
   background: var(--gray-color);
@@ -31,22 +31,22 @@ body {
   justify-content: center;
 }
 nav {
-  min-width: 50%;
+  min-width: 40%;
   background-color: var(--yellow-color);
   border-radius: 50rem;
   position: fixed;
   box-shadow: 0 .5rem 2rem .1rem var(--darkyellow-color);
   text-align: center;
   vertical-align: center;
-  transition: all 0.3s;
+  transition: all 0.5s;
     ul {
     list-style: none;
       li {
       display: inline-block;
       font-family: var(--sub-font);
-      border-right: .1rem solid var(--black-color);
+      border-right: .01rem solid var(--black-color);
       border-radius: 0;
-      transition: all 0.3s;
+      transition: all 0.5s;
       padding: 1.675rem 0;
         a {
         color: var(--black-color);
@@ -55,7 +55,6 @@ nav {
         padding: 0 5rem;
         letter-spacing: 0.1rem;
         font-weight: 500;
-        transition: all 0.3s;
       }
     }
   }
@@ -77,7 +76,7 @@ nav li:focus {
   min-height: 50rem;
   background: var(--red-color);
   padding: 4rem;
-  border: .2rem solid var(--black-color);
+  border: .1rem solid var(--black-color);
 }
 h1 {
   font: 5rem var(--main-font);

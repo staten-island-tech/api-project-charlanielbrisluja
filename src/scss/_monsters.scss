@@ -12,14 +12,14 @@
     padding: 1rem;
     border-radius: 1rem;
     margin-top: 2rem;
-    font-size: 1.4rem;
+    font: 1.4rem var(--sub-font);
 }
 .monster-card {
     height: 25rem;
     width: 20rem;
+    border: .01rem solid #000;
     border-radius: 1rem;
-    background: rgb(39,255,171);
-    background: linear-gradient(0deg, rgb(27, 182, 122) 0%, rgba(255,255,255,1) 100%);
+    background: linear-gradient(0deg, rgba(107, 27, 182, .4) 0%, rgba(240, 224, 255, 1) 100%);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -27,10 +27,16 @@
     text-align: center;
     transition: all .3s;
 }
+.monster-card:hover {
+    box-shadow: 0 2rem 3rem rgba(217, 151, 255, 0.7);
+    transform: translateY(-.5rem);
+    z-index: 1;
+}
 .monster-img {
     border-radius: 1rem;
     min-height: 25rem;
     width: 20rem;
+    border: .01rem solid #000;
 }
 .monster-card:hover .monster-info,
 .monster-card:hover .name {
@@ -53,10 +59,10 @@
     display: block;
 }
 .addbtn:hover {
-    box-shadow: 0 .5rem 1rem var(--yellow-color);
+    box-shadow: 0 .5rem 1rem rgba(255, 236, 151, .7);
 }
 .learnbtn:hover {
-    box-shadow: 0 .5rem 1rem var(--white-color);
+    box-shadow: 0 .5rem 1rem rgba(255, 255, 255, .7);
 }
 .addbtn:hover, .learnbtn:hover {
     transform: translateY(-.3rem);
@@ -100,4 +106,8 @@
 }
 .selected-box {
     margin-top: 2rem;
+}
+.card-box {
+    width: 100%;
+    margin-bottom: 2rem;
 }
