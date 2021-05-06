@@ -15,22 +15,33 @@
     font-size: 1.4rem;
 }
 .monster-card {
-    height: 25rem;
-    width: 20rem;
-    border-radius: 1rem;
-    background: rgb(39,255,171);
-    background: linear-gradient(0deg, rgb(27, 182, 122) 0%, rgba(255,255,255,1) 100%);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
+}
+.monster-info {
+    padding: 1rem;
+    font-family: var(--sub-font);
+    line-height: 150%;
+    transition: all .3s;
+}
+.monster-card, .monster-info {
+    height: 25rem;
+    width: 20rem;
+    border-radius: 1rem;
     transition: all .3s;
 }
 .monster-img {
-    border-radius: 1rem;
     min-height: 25rem;
     width: 20rem;
+    border-radius: 1rem;
+}
+.monster-info {
+    background: rgb(122, 39, 255);
+    background: linear-gradient(0deg, rgba(107, 27, 182, .5) 0%, rgba(255,255,255,1) 100%);
+    display: none;
 }
 .monster-card:hover .monster-info,
 .monster-card:hover .name {
@@ -62,17 +73,12 @@
     transform: translateY(-.3rem);
     z-index: 1;
 }
-.monster-info {
-    display: none;
-    line-height: 150%;
-    font-family: var(--sub-font);
-    padding: 1rem;
-}
 .name {
     font: 1.8rem var(--sub-font);
     letter-spacing: .1rem;
     font-weight: 900;
     display: none;
+    
 }
 .stats-grid {
     width: 100%;
