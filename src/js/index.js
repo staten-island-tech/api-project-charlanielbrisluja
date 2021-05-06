@@ -12,5 +12,16 @@ window.addEventListener('beforeunload', function (e) {
 
   //this is a demo thing
   DOMSelectors.addButton.addEventListener('click', function () {
-      DOMSelectors.selectedBox.appendChild(DOMSelectors.monsterCard);
+      if (DOMSelectors.addButton.innerHTML === "Delete monster") {
+        DOMSelectors.cardBox.appendChild(DOMSelectors.monsterCard);
+        DOMSelectors.addButton.innerHTML = "Add to my monsters";
+        DOMSelectors.addButton.style.backgroundColor = "var(--yellow-color)";
+        DOMSelectors.addButton.style.boxShadow = "0 .5rem 1rem rgba(255, 255, 255, .7)";
+    } else {
+        DOMSelectors.selectedBox.appendChild(DOMSelectors.monsterCard);
+        DOMSelectors.addButton.innerHTML = "Delete monster";
+        DOMSelectors.addButton.style.backgroundColor = "var(--red-color)";
+        DOMSelectors.addButton.style.boxShadow = "0 .5rem 1rem rgba(255, 106, 113, .7)";
+      }
   });
+
