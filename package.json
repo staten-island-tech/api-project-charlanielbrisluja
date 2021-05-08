@@ -17,8 +17,5 @@
   },
   "browserslist": [
     "since 2017-06"
-  ],
-  "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.15.3"
-  }
+  ]
 }
