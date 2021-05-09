@@ -1,0 +1,40 @@
+.settingbox-cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.settingbox-subheading {
+  font: 2rem var(--sub-font);
+  color: var(--darkyellow-color);
+  margin-top: 2rem;
+}
+
+.settingbox-card {
+  height: 23rem;
+  width: 20rem;
+  padding: 1rem;
+  border: 0.01rem solid #000;
+  border-radius: 1rem;
+  background-color: seashell;
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: all 0.3s;
+}
+
+.settingbox-card-heading {
+  font: 1.8rem var(--sub-font);
+  letter-spacing: 0.1rem;
+  font-weight: 900;
+  margin-bottom: 1rem;
+}
+
+.settingbox-card-information {
+  font: 1.3rem var(--sub-font);
+  letter-spacing: 0.1rem;
+  font-weight: 900;
+}
