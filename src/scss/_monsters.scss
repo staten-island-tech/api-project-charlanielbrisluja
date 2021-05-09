@@ -126,6 +126,10 @@
 }
 .selected-box {
     margin-top: 2rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 .card-box {
     width: 100%;
