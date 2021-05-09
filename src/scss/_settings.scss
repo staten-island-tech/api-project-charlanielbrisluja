@@ -94,24 +94,38 @@
 .settingbox-enter-your-own {
   margin-top: 2rem;
 }
-.settingbox-writing-section {
-  min-height: 20rem;
-  display: block;
+.settingbox-setting-input, .settingbox-writing-section {
   border: 0.1rem solid var(--lightgray-color);
   background-color: var(--white-color);
   padding: 1rem;
   font-size: 1.4rem;
   font-family: var(--sub-font);
 }
-
-.settingbox-writing-section:focus {
+.settingbox-setting-input {
+  min-height: 4rem;
+  width: 30rem;
+  margin-bottom: 2rem;
+  display: block;
+}
+.settingbox-writing-section {
+  min-height: 20rem;
+  display: block;
+}
+.settingbox-writing-section:focus,
+.settingbox-setting-input:focus {
   border: 0.1rem solid var(--gray-color);
 }
-
-.settingbox-writing-section:before {
+.settingbox-writing-section:before,
+.settingbox-setting-input:before {
   color: var(--lightgray-color);
 }
-
+.settingbox-setting-input:empty::before {
+  content: "Choose a setting for your story";
+}
 .settingbox-writing-section:empty::before {
   content: "Write about your setting! It's a good idea to think of what kind of culture the people there would have, how they'd react to outsiders, and other plot-rich factors.";
+}
+.settingbox-writing-section:empty:focus::before,
+.settingbox-setting-input:empty:focus::before {
+  content: "";
 }
