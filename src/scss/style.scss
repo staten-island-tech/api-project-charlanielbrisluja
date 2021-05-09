@@ -1,15 +1,16 @@
 @import "_monsters.scss";
 @import "_settings.scss";
+@import "_characters.scss";
 :root {
-  --gray-color: #403F4B;
+  --gray-color: #403f4b;
   --yellow-color: #ffec97;
   --red-color: #ff6a71;
   --white-color: #fff;
   --black-color: #000;
   --lightgray-color: #888;
   --darkyellow-color: #eed97c;
-  --main-font: 'New Rocker', cursive;
-  --sub-font: 'Montserrat', sans-serif;
+  --main-font: "New Rocker", cursive;
+  --sub-font: "Montserrat", sans-serif;
 }
 html {
   scroll-behavior: smooth;
@@ -37,21 +38,21 @@ nav {
   background-color: var(--yellow-color);
   border-radius: 50rem;
   position: fixed;
-  box-shadow: 0 .5rem 2rem .1rem var(--darkyellow-color);
+  box-shadow: 0 0.5rem 2rem 0.1rem var(--darkyellow-color);
   text-align: center;
   vertical-align: center;
   transition: all 0.5s;
   z-index: 2;
-    ul {
+  ul {
     list-style: none;
-      li {
+    li {
       display: inline-block;
       font-family: var(--sub-font);
-      border-right: .01rem solid var(--black-color);
+      border-right: 0.01rem solid var(--black-color);
       border-radius: 0;
       transition: all 0.5s;
       padding: 1.675rem 0;
-        a {
+      a {
         color: var(--black-color);
         text-decoration: none;
         font-size: 1.65rem;
@@ -79,7 +80,7 @@ nav li:focus {
   min-height: 50rem;
   background: var(--red-color);
   padding: 4rem;
-  border: .1rem solid var(--black-color);
+  border: 0.1rem solid var(--black-color);
   margin-bottom: 3rem;
 }
 h1 {
@@ -87,11 +88,19 @@ h1 {
   color: var(--yellow-color);
   text-align: center;
 }
+.logo-container {
+  display: flex;
+  justify-content: center;
+}
 .logo {
   font: 7rem var(--main-font);
   color: var(--white-color);
   padding-top: 9rem;
   padding-bottom: 2rem;
+}
+.logo-image {
+  max-height: 6rem;
+  margin-top: 4rem;
 }
 .fa-dice-one {
   font-size: 7rem;
@@ -100,13 +109,16 @@ h1 {
 .label {
   font: 900 1.6rem var(--sub-font);
   color: var(--black-color);
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
-.textinput, .label, .textarea {
+.textinput,
+.label,
+.textarea {
   display: block;
 }
-.textinput, .textarea {
-  border: .1rem solid var(--lightgray-color);
+.textinput,
+.textarea {
+  border: 0.1rem solid var(--lightgray-color);
   background-color: var(--white-color);
   padding: 1rem;
   font-size: 1.4rem;
@@ -120,21 +132,21 @@ h1 {
 .textarea {
   min-height: 50rem;
 }
-.textinput:focus, 
+.textinput:focus,
 .textarea:focus {
-  border: .1rem solid var(--gray-color);
+  border: 0.1rem solid var(--gray-color);
 }
 .textinput:empty::before,
 .textarea:empty::before {
   color: var(--lightgray-color);
 }
 .textinput:empty::before {
-  content: 'Make a title for your story';
+  content: "Make a title for your story";
 }
 .textarea:empty::before {
-  content: 'Write your one-shot story (Pro tip: Remember to think of all the ways that players may act in the game!)';
+  content: "Write your one-shot story (Pro tip: Remember to think of all the ways that players may act in the game!)";
 }
 .textinput:empty:focus::before,
 .textarea:empty:focus::before {
-  content: '';
+  content: "";
 }

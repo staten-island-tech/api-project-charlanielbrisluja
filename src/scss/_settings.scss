@@ -4,7 +4,9 @@
   justify-content: space-evenly;
 }
 
-.settingbox-subheading {
+.settingbox-subheading,
+.settingbox-subheading-two,
+.settingbox-subheading-three {
   font: 2rem var(--sub-font);
   color: var(--darkyellow-color);
   margin-top: 2rem;
@@ -16,7 +18,6 @@
   padding: 1rem;
   border: 0.01rem solid #000;
   border-radius: 1rem;
-  background-color: seashell;
   margin-top: 3rem;
   display: flex;
   flex-direction: column;
@@ -24,6 +25,11 @@
   align-items: center;
   text-align: center;
   transition: all 0.3s;
+  background: linear-gradient(
+    0deg,
+    rgba(107, 27, 182, 0.4) 0%,
+    rgb(224, 236, 255) 100%
+  );
 }
 
 .settingbox-card-heading {
@@ -31,10 +37,85 @@
   letter-spacing: 0.1rem;
   font-weight: 900;
   margin-bottom: 1rem;
+  display: none;
 }
 
 .settingbox-card-information {
   font: 1.3rem var(--sub-font);
   letter-spacing: 0.1rem;
   font-weight: 900;
+  display: none;
+}
+
+.settingbox-card-image {
+  border-radius: 1rem;
+  min-height: 23rem;
+  width: 20rem;
+  border: 0.01rem solid #000;
+}
+
+.settingbox-card-add {
+  display: none;
+  height: 3.5rem;
+  line-height: 3.5rem;
+  padding: 0 2.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+  transition: all 0.3s;
+  font: 800 1.2rem var(--sub-font);
+  background-color: var(--yellow-color);
+}
+
+.settingbox-card-add:hover {
+  box-shadow: 0 0.5rem 1rem rgba(255, 236, 151, 0.7);
+  transform: translateY(-0.5rem);
+  z-index: 1;
+}
+
+.settingbox-card:hover {
+  transform: translateY(-0.5rem);
+  z-index: 1;
+}
+.settingbox-card:hover .settingbox-card-heading,
+.settingbox-card:hover .settingbox-card-information,
+.settingbox-card:hover .settingbox-card-add {
+  display: block;
+}
+.settingbox-card:hover .settingbox-card-image {
+  display: none;
+}
+
+.settingbox-subheading-two {
+  text-align: center;
+  font: 4rem var(--main-font);
+}
+
+.settingbox-enter-your-own {
+  margin-top: 2rem;
+}
+.settingbox-writing-section {
+  min-height: 20rem;
+  display: block;
+  border: 0.1rem solid var(--lightgray-color);
+  background-color: var(--white-color);
+  padding: 1rem;
+  font-size: 1.4rem;
+  font-family: var(--sub-font);
+}
+
+.settingbox-writing-section:focus {
+  border: 0.1rem solid var(--gray-color);
+}
+
+.settingbox-writing-section:before {
+  color: var(--lightgray-color);
+}
+
+.settingbox-writing-section:empty::before {
+  content: "Write about your setting! It's a good idea to think of what kind of culture the people there would have, how they'd react to outsiders, and other plot-rich factors.";
+}
+
+.settingbox-writing-section:empty:focus::before {
+  content: "";
 }
