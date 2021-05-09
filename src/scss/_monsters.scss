@@ -1,9 +1,11 @@
 
-.search-box {
+.search-form {
     width: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
     margin-bottom: 2rem;
+    margin-top: 2rem;
 }
 .monster-search {
     height: 4rem;
@@ -11,12 +13,30 @@
     border: .1rem solid var(--lightgray-color);
     padding: 1rem;
     border-radius: 1rem;
-    margin-top: 2rem;
     font: 1.4rem var(--sub-font);
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.searchbtn {
+    height: 3.8rem;
+    width: 4rem;
+    border: none;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    background-color: var(--yellow-color);
+    transition: all .1s;
+}
+.fa-search {
+    font-size: 1.6rem;
+    font-weight: 400;
+}
+.searchbtn:hover {
+    background-color: var(--darkyellow-color);
 }
 .monster-card {
-    height: 25rem;
+    height: 23rem;
     width: 20rem;
+    padding: 1rem;
     border: .01rem solid #000;
     border-radius: 1rem;
     background: linear-gradient(0deg, rgba(107, 27, 182, .4) 0%, rgb(224, 236, 255) 100%);
@@ -34,7 +54,7 @@
 }
 .monster-img {
     border-radius: 1rem;
-    min-height: 25rem;
+    min-height: 23rem;
     width: 20rem;
     border: .01rem solid #000;
 }
@@ -52,7 +72,7 @@
     border: none;
     border-radius: .5rem;
     transition: all .3s;
-    font: 500 1.2rem var(--sub-font);
+    font: 800 1.2rem var(--sub-font);
 }
 .addbtn {
     background-color: var(--yellow-color);
@@ -72,7 +92,7 @@
     display: none;
     line-height: 150%;
     font-family: var(--sub-font);
-    padding: 1rem;
+    margin-top: .5rem;
 }
 .name {
     font: 1.8rem var(--sub-font);

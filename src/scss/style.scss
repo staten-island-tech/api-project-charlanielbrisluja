@@ -19,6 +19,7 @@ body * {
   font-size: 62.5%;
   padding: 0;
   margin: 0;
+  outline: none;
   box-sizing: border-box;
   border-radius: 1rem;
 }
@@ -90,6 +91,10 @@ h1 {
   padding-top: 9rem;
   padding-bottom: 2rem;
 }
+.fa-dice-one {
+  font-size: 7rem;
+  color: #ffcea6;
+}
 .label {
   font: 900 1.6rem var(--sub-font);
   color: var(--black-color);
@@ -115,7 +120,6 @@ h1 {
 }
 .textinput:focus, 
 .textarea:focus {
-  outline: none;
   border: .1rem solid var(--gray-color);
 }
 .textinput:empty::before,
