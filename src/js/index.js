@@ -10,18 +10,13 @@ window.addEventListener('beforeunload', function (e) {
   // get url for image:
   //  url(/api/monsters/${index})
 
-  //this is a demo thing
-  DOMSelectors.addButton.addEventListener('click', function () {
-      if (DOMSelectors.addButton.innerHTML === "Delete monster") {
-        DOMSelectors.cardBox.appendChild(DOMSelectors.monsterCard);
-        DOMSelectors.addButton.innerHTML = "Add to my monsters";
-        DOMSelectors.addButton.style.backgroundColor = "var(--yellow-color)";
-        DOMSelectors.addButton.style.boxShadow = "0 .5rem 1rem rgba(255, 236, 151, .7)";
-    } else {
-        DOMSelectors.selectedBox.appendChild(DOMSelectors.monsterCard);
-        DOMSelectors.addButton.innerHTML = "Delete monster";
-        DOMSelectors.addButton.style.backgroundColor = "var(--red-color)";
-        DOMSelectors.addButton.style.boxShadow = "0 .5rem 1rem rgba(255, 106, 113, .7)";
-      }
-  });
+  //this is a demo thing 
+
+  DOMSelectors.addButton.addEventListener('click', function () { 
+    let copy = DOMSelectors.monsterCard.cloneNode(true);  
+    DOMSelectors.selectedBox.appendChild(copy);
+        copy.querySelector('.addbtn').innerHTML = "Delete monster";
+        copy.querySelector('.addbtn').style.backgroundColor = "var(--red-color)";
+        copy.querySelector('.addbtn').style.boxShadow = "none";
+    });
 
