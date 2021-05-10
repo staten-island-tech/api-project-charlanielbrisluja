@@ -32,6 +32,11 @@
 .searchbtn:hover {
   background-color: var(--darkyellow-color);
 }
+.card-box {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
 .monster-card {
   height: 23rem;
   width: 20rem;
