@@ -11,9 +11,14 @@ window.addEventListener('beforeunload', function (e) {
   //  url(/api/monsters/${index})
   //console.log(https://www.dnd5eapi.co/api/monsters);
   //this is a demo thing 
-  DOMSelectors.addButtons.addEventListener('click', function (e) { 
-    copy = e.parentElement.cloneNode(true); 
+  DOMSelectors.addButton.addEventListener('click', function () { 
+    let copy = DOMSelectors.monsterCard.cloneNode(true); 
+    DOMSelectors.selectedBox.appendChild(copy);
+copy.querySelector('.addbtn').innerHTML = "Delete monster";
+copy.querySelector('.addbtn').style.backgroundColor = "var(--red-color)";
+copy.querySelector('.addbtn').style.boxShadow = "none";
   });
+
 /*
   const query = async function() {
     try {
@@ -43,8 +48,3 @@ window.addEventListener('beforeunload', function (e) {
     }
 }
 query(); */
-/*   DOMSelectors.selectedBox.appendChild(copy);
-copy.querySelector('.addbtn').innerHTML = "Delete monster";
-copy.querySelector('.addbtn').style.backgroundColor = "var(--red-color)";
-copy.querySelector('.addbtn').style.boxShadow = "none";
-*/
