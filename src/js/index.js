@@ -48,7 +48,7 @@ DOMSelectors.addButton.style.boxShadow = "none";
     }
 }
 query(); 
-
+/*
 const stats = async function() {
     try {
         const results = await fetch(`https://www.dnd5eapi.co/api/monsters/${monster.index}`);
@@ -77,11 +77,34 @@ console.log(error);
 alert("Something went wrong.");
 }
 }
-
-DOMSelectors.cardBox.addEventListener("click", function (card) {
-DOMSelectors.selectedBox.append(card.first);
+*/
+//console.log(DOMSelectors.cardBox.children);
+console.log(DOMSelectors.selectedBox.childElementCount);
+DOMSelectors.cardBox.addEventListener("click", function (e) {
+console.log(DOMSelectors.selectedBox.childElementCount);
+    //makes sure that target is the add button
+    if (e.target.innerHTML === "Add monster") {
+        //no more empty state
+        DOMSelectors.emptyIcon.style.display = "none";
+        //changes the original button to prepare for copying
+        e.target.innerHTML = "Delete monster";
+        e.target.style.backgroundColor = "var(--red-color)";
+        //copies and appends the element
+        const newCard = document.createElement("div");
+        newCard.insertAdjacentHTML ("beforeend", e.target.parentElement.outerHTML);
+    DOMSelectors.selectedBox.append(newCard);
+    //reverts the original button
+    e.target.innerHTML = "Add monster";
+    e.target.style.backgroundColor = "var(--yellow-color)";
 //DOMSelectors.selectedBox.insertAdjacentHTML('beforeend', copy);
-});
+}});
+
+DOMSelectors.selectedBox.addEventListener("click", function (e) {
+    if (e.target.innerHTML === "Delete monster") {
+        e.target.parentElement.style.display = "none";
+//DOMSelectors.selectedBox.insertAdjacentHTML('beforeend', copy);
+}});
+
 
 /*
 DOMSelectors.cardBox.childNodes.forEach((card) => {

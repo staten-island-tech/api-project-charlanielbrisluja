@@ -36,7 +36,7 @@
 }
 .card-box, .selected-box {
     padding: 3rem 0;
-    max-height: 30rem;
+    max-height: 35rem;
     width: 100%;
     overflow-y: scroll;
     display: flex;
@@ -44,7 +44,7 @@
     flex-wrap: wrap;
 }
 .monster-card {
-  height: 25rem;
+  height: 27rem;
   width: 20rem;
   padding: 1rem;
   border: 0.01rem solid #000;
@@ -63,7 +63,8 @@
   z-index: 1;
 }
 .monster-card:hover .name{
-    padding: .5rem 10rem;
+    padding: 1rem;
+    width: 120%;
   }
 .monster-card:hover .monster-info{
     display: block;
@@ -104,6 +105,7 @@
   display: none;
 }
 .name {
+  width: 100%;
   font: 1.8rem var(--sub-font);
   letter-spacing: 0.1rem;
   font-weight: 900;
@@ -116,7 +118,6 @@
   grid-template-columns: 1fr 1fr;
   font-size: 2rem;
   gap: .75rem;
-  transition: all 0.5s;
 }
 .addbtn,
 .stats-grid {
@@ -140,4 +141,7 @@
 .card-box {
   width: 100%;
   margin-bottom: 2rem;
+}
+.fa-dragon {
+    font-size: 5rem;
 }
