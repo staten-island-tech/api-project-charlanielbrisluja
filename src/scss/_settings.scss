@@ -4,12 +4,12 @@
   justify-content: space-evenly;
 }
 
-.settingbox-subheading,
-.settingbox-subheading-two,
-.settingbox-subheading-three {
-  font: 2rem var(--sub-font);
-  color: var(--darkyellow-color);
-  margin-top: 2rem;
+.subheading {
+  font: 1.6rem var(--sub-font);
+  text-align: center;
+  padding: 0 20%;
+  color: var(--white-color);
+  margin-top: 1.5rem;
 }
 
 .settingbox-card {

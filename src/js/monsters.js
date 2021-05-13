@@ -7,6 +7,7 @@ window.addEventListener('beforeunload', function (e) {
     e.returnValue = '';
   });
 
+
 /*
  DOMSelectors.addButton.addEventListener('click', function () { 
 if (DOMSelectors.addButton.innerHTML = "Delete monster") {
@@ -22,6 +23,16 @@ DOMSelectors.addButton.style.boxShadow = "none";
 });
 */
 
+DOMSelectors.moreButton.addEventListener("click", function () {
+if (DOMSelectors.moreButton.innerHTML === "More space") {
+    DOMSelectors.storyArea.style.minHeight = "100rem";
+    DOMSelectors.moreButton.innerHTML = "Less space";
+} else {
+    DOMSelectors.storyArea.style.minHeight = "50rem";
+    DOMSelectors.moreButton.innerHTML = "More space";
+}
+});
+
   const query = async function() {
     try {
         const response = await fetch('https://www.dnd5eapi.co/api/monsters');
@@ -30,12 +41,7 @@ DOMSelectors.addButton.style.boxShadow = "none";
             DOMSelectors.cardBox.insertAdjacentHTML ("beforeend", `<div class="monster-card">
             <h2 class="name">${monster.name}</h2>
             <div class="monster-info">
-            <h3 class="type">Type: ${monster.type}</h3>
-            <h3 class="size">Size: ${monster.size}</h3>
-            <div class="stats-grid">
-            <h3>AC: ${monster.armor_class}</h3>
-            <h3>HP: ${monster.hit_points}</h3>
-            </div>
+            <h3 class="monster-description">Search for this monster above to find more information!</h3>
             </div>
             <button class="addbtn">Add monster</button>
             <button class="learnbtn">Learn more</button>
@@ -44,10 +50,55 @@ DOMSelectors.addButton.style.boxShadow = "none";
         });
     } catch (error) {
         console.log(error);
-        alert("Something went wrong.");
+        alert("Something went wrong. Try again later.");
     }
 }
 query(); 
+
+DOMSelectors.resetButton.addEventListener("click", function (e) {
+    query();
+    DOMSelectors.searchBox.value = "";
+});
+
+const listen = function () {
+    DOMSelectors.searchForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      DOMSelectors.cardBox.innerHTML = "";
+      const searchWords = DOMSelectors.searchBox.value;
+      const searchQuery = async function() {
+          try {
+              const response = await fetch(`https://www.dnd5eapi.co/api/monsters/${searchWords}`);
+              const data = await response.json();
+              console.log(data);
+                DOMSelectors.cardBox.insertAdjacentHTML ("beforeend", `<div class="monster-card">
+                  <h2 class="name">${data.name}</h2>
+                  <div class="monster-info">
+                  <h3 class="monster-description">Size: ${data.size}</h3>
+                  <h3 class="monster-description">Type: ${data.type}</h3>
+                  <h3 class="monster-description">Subtype: ${data.subtype}</h3>
+                  <h3 class="monster-description">Alignment: ${data.alignment}</h3>
+                  <div class="stats-grid">
+                  <h3>AC: ${data.armor_class}</h3>
+                  <h3>HP: ${data.hit_points}</h3>
+                  </div>
+                  </div>
+                  <button class="addbtn">Add monster</button>
+                  <button class="learnbtn">Learn more</button>
+                  </div>
+                  </div>`);
+               }
+    
+               catch (error) {
+                  console.log(error);
+                  alert("No monster found. Check for misspelling.");
+                  query();
+              }
+      };
+      searchQuery(); 
+      
+    });
+  };
+  listen();
 /*
 const stats = async function() {
     try {

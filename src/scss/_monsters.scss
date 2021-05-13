@@ -7,22 +7,22 @@
   margin-top: 2rem;
 }
 .monster-search {
-  height: 4rem;
   width: 30rem;
-  border: 0.1rem solid var(--lightgray-color);
   padding: 1rem;
   font: 1.4rem var(--sub-font);
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
 .searchbtn {
-  height: 3.8rem;
-  width: 4rem;
-  border: none;
+  width: 4.5rem;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
   background-color: var(--yellow-color);
   transition: all 0.1s;
+}
+.monster-search, .searchbtn {
+  border: 0.1rem solid var(--black-color);
+  height: 4rem;
 }
 .fa-search {
   font-size: 1.6rem;
@@ -30,6 +30,18 @@
 }
 .searchbtn:hover {
   background-color: var(--darkyellow-color);
+}
+.search-reset {
+  height: 3.8rem;
+  padding: 0 1.5rem;
+  border: .001rem solid #444444;
+  transition: all 0.1s;
+  font: 1.4rem var(--sub-font);
+  background-color: #ff5e42;
+  margin-right: 2rem;
+}
+.search-reset:hover {
+    background-color: #e25037;
 }
 .card-box {
     gap: 1rem;
@@ -126,13 +138,10 @@
 .learnbtn {
   margin-top: 0.5rem;
 }
-.type,
-.size {
+.monster-description {
   font-size: 1.3rem;
   font-weight: 700;
-}
-.size {
-  margin-top: 0.75rem;
+  line-height: 150%;
 }
 .selected-box {
   margin-top: 2rem;

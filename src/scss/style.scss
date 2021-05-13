@@ -157,3 +157,14 @@ h1 {
 .textarea:empty:focus::before {
   content: "";
 }
+.morebtn-box {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+.morebtn {
+  font: 1.5rem var(--sub-font);
+  background-color: var(--yellow-color);
+  padding: 1.5rem;
+}

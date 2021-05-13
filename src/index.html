@@ -31,11 +31,14 @@
   <p class="label">Title</p>
   <span class="textinput" role="textbox" contenteditable="true"></span>
     <p class="label">Story</p>
-    <span class="textarea"  role="textbox" contenteditable="true"></span>
+    <span class="textarea storyarea" role="textbox" contenteditable="true"></span>
+    <div class="morebtn-box">
+      <button class="morebtn">More space</button>
+    </div>
 </div>
 <div class="container" id="settingbox">
   <h1>Setting</h1>
-  <h2 class="settingbox-subheading">Pick from some fun d&d locations! Hover on each for more info.</h2>
+  <h2 class="subheading">Pick from some fun d&d locations! Hover on each for more info.</h2>
   <div class="settingbox-cards">
   <div class="settingbox-card">
     <h3 class="settingbox-card-heading">Neverwinter</h3>
@@ -68,21 +71,23 @@
     <button class="settingbox-card-add">Add to my settings</button>
   </div>
 </div>
-<h3 class="settingbox-subheading-two">Or</h3>
-<h3 class="settingbox-subheading-three">Write your own!</h3>
 <div class="settingbox-enter-your-own">
 <p class="label">Setting</p>
 <span class="settingbox-setting-input" role="textbox" contenteditable="true"></span>
-  <p class="label" >Description</p>
+<h3 class="subheading">Now make your setting unique!</h3>
+<p class="label">Description</p>
   <span class="settingbox-writing-section" role="textbox" contenteditable="true"></span>
 </div>
 </div>
 <div class="container" id="monsterbox">
   <h1>Monsters</h1>
-  <div class="search-form"> 
-    <input class="monster-search" type="text" placeholder="Search for monsters">
-    <button class="searchbtn"><i class="fas fa-search"></i></button>
-  </div>
+  <h3 class="subheading">Search for a monster here to find its stats. Make sure to spell it properly and use dashes if there are spaces in the name.</h3>
+  <form class="search-form"> 
+    <button class="search-reset">Reset</button>
+    <label for="monster-search"></label>
+    <input class="monster-search" id="monster-search" type="text" placeholder="Search for monsters">
+    <button class="searchbtn" type="submit"><i class="fas fa-search"></i></button>
+  </form>
   <div class="card-box">
 
     <!-- <div class="monster-card">
@@ -102,7 +107,7 @@
     </div>  -->
 
 </div>
-  <p class="label">My monsters:</p>
+  <h2 class="label">My monsters:</h2>
   <div class="selected-box">
     <i class="fas fa-dragon"></i>
   </div>
@@ -114,7 +119,7 @@
     <img src="https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/211/1000/1000/636252764731637373.jpeg" alt="" class="characterbox-image" >
     <div class="ugh-inner">
     <p  class="label">Name</p>
-<span  class="textinput" role="textbox" contenteditable="true"></span>
+<span class="textinput" role="textbox" contenteditable="true"></span>
 </div>
 
 <div class="characterbox-character-info">
@@ -134,6 +139,6 @@
 </div>
   </div>
 
-    <script src="js/index.js"></script>
+    <script src="js/monsters.js"></script>
   </body>
 </html>
