@@ -9,6 +9,7 @@
   --black-color: #000;
   --lightgray-color: #888;
   --darkyellow-color: #eed97c;
+  --beige-color: #dacaa5;
   --main-font: "New Rocker", cursive;
   --sub-font: "Montserrat", sans-serif;
 }
@@ -23,7 +24,7 @@ body * {
   margin: 0;
   outline: none;
   box-sizing: border-box;
-  border-radius: 1rem;
+  border-radius: .5rem;
 }
 body {
   background: var(--gray-color);
@@ -90,21 +91,27 @@ h1 {
 }
 .logo-container {
   display: flex;
+  flex-direction: row;
   justify-content: center;
+  margin-top: 9rem;
 }
 .logo {
   font: 7rem var(--main-font);
   color: var(--white-color);
-  padding-top: 9rem;
   padding-bottom: 2rem;
+  padding-left: 1.5rem;
 }
-.logo-image {
-  max-height: 6rem;
-  margin-top: 4rem;
-}
-.fa-dice-one {
+.fa-dice-d20 {
   font-size: 7rem;
-  color: #ffcea6;
+  color: #ffffff;
+  position: relative;
+}
+.dice-number {
+  font-size: 2rem;
+  position: absolute;
+  top: 2.7rem;
+  left: 2.8rem;
+  color: var(--black-color);
 }
 .label {
   font: 900 1.6rem var(--sub-font);

@@ -7,44 +7,97 @@ window.addEventListener('beforeunload', function (e) {
     e.returnValue = '';
   });
 
-  // get url for image:
-  //  url(/api/monsters/${index})
-  //console.log(https://www.dnd5eapi.co/api/monsters);
-  //this is a demo thing 
-  DOMSelectors.addButton.addEventListener('click', function () { 
-    let copy = DOMSelectors.monsterCard.cloneNode(true); 
-    DOMSelectors.selectedBox.appendChild(copy);
-copy.querySelector('.addbtn').innerHTML = "Delete monster";
-copy.querySelector('.addbtn').style.backgroundColor = "var(--red-color)";
-copy.querySelector('.addbtn').style.boxShadow = "none";
-  });
-
 /*
+ DOMSelectors.addButton.addEventListener('click', function () { 
+if (DOMSelectors.addButton.innerHTML = "Delete monster") {
+DOMSelectors.cardBox.appendChild(DOMSelectors.monsterCard);
+DOMSelectors.addButton.innerHTML = "Add monster";
+DOMSelectors.addButton.style.backgroundColor = "var(--yellow-color)";  
+} else {
+DOMSelectors.selectedBox.appendChild(DOMSelectors.monsterCard);
+DOMSelectors.addButton.innerHTML = "Delete monster";
+DOMSelectors.addButton.style.backgroundColor = "var(--red-color)";
+DOMSelectors.addButton.style.boxShadow = "none";    
+}
+});
+*/
+
   const query = async function() {
     try {
-        const response = await fetch(
-        `https://www.dnd5eapi.co/api/monsters`
-        );
+        const response = await fetch('https://www.dnd5eapi.co/api/monsters');
         const data = await response.json();
         data.results.forEach((monster) => {
-            let genreArr = [];
-            const addGenre = function () {
-                genres.forEach((element) => {
-                    if (movie.genre_ids.includes(element.id)) {
-                        genreArr.push(element.name);
-                        return genreArr;
-                    }
-                });
-            };
-            DOMSelectors.cardBox.insertAdjacentHTML("beforeend", `<div class="card-box">
-            <div class="monster-card">
+            DOMSelectors.cardBox.insertAdjacentHTML ("beforeend", `<div class="monster-card">
             <h2 class="name">${monster.name}</h2>
-            <img class="monster-img" src="https://www.dnd5eapi.co/api/monsters/${monster.index}" alt="">`   
-        
-    )} 
-        )} catch (error) {
+            <div class="monster-info">
+            <h3 class="type">Type: ${monster.type}</h3>
+            <h3 class="size">Size: ${monster.size}</h3>
+            <div class="stats-grid">
+            <h3>AC: ${monster.armor_class}</h3>
+            <h3>HP: ${monster.hit_points}</h3>
+            </div>
+            </div>
+            <button class="addbtn">Add monster</button>
+            <button class="learnbtn">Learn more</button>
+      </div>
+    </div>`);
+        });
+    } catch (error) {
         console.log(error);
-        alert("Something went wrong.")
+        alert("Something went wrong.");
     }
 }
-query(); */
+query(); 
+
+const stats = async function() {
+    try {
+        const results = await fetch(`https://www.dnd5eapi.co/api/monsters/${monster.index}`);
+        const info = await results.json();
+        info.results.forEach((monster) => {
+        DOMSelectors.cardBox.insertAdjacentHTML ("beforeend", `<div class="monster-card">
+        <h2 class="name">${monster.name}</h2>
+        <div class="monster-info">
+        <h3 class="type">Type: ${monster.type}</h3>
+        <h3 class="size">Size: ${monster.size}</h3>
+        <div class="stats-grid">
+        <h3>AC: ${monster.armor_class}</h3>
+        <h3>HP: ${monster.hit_points}</h3>
+        <h3>CR: 2</h3>
+        <h3>XP: 450</h3> 
+        </div>
+        </div>
+        <button class="addbtn">Add monster</button>
+        <button class="learnbtn">Learn more</button>
+  </div>
+</div>`
+);
+});
+} catch (error) {
+console.log(error);
+alert("Something went wrong.");
+}
+}
+
+DOMSelectors.cardBox.addEventListener("click", function (card) {
+DOMSelectors.selectedBox.append(card.first);
+//DOMSelectors.selectedBox.insertAdjacentHTML('beforeend', copy);
+});
+
+/*
+DOMSelectors.cardBox.childNodes.forEach((card) => {
+    card.addEventListener("click", function (card) {
+DOMSelectors.selectedBox.appendChild(card);
+button.innerHTML = "Delete monster";
+button.style.backgroundColor = "var(--red-color)";
+button.style.boxShadow = "none";  
+    });
+    console.log("button");
+});
+
+// buttonArray.forEach((button) => {
+// card.querySelector(".addbtn").addEventListener('click', function (e) { 
+//     console.log("yes");
+// });
+// });
+
+*/

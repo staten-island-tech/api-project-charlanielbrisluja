@@ -11,7 +11,6 @@
   width: 30rem;
   border: 0.1rem solid var(--lightgray-color);
   padding: 1rem;
-  border-radius: 1rem;
   font: 1.4rem var(--sub-font);
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
@@ -33,44 +32,49 @@
   background-color: var(--darkyellow-color);
 }
 .card-box {
-    display: flex;
-    flex-direction: row;
     gap: 1rem;
 }
+.card-box, .selected-box {
+    padding: 3rem 0;
+    max-height: 30rem;
+    width: 100%;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
 .monster-card {
-  height: 23rem;
+  height: 25rem;
   width: 20rem;
   padding: 1rem;
   border: 0.01rem solid #000;
-  border-radius: 1rem;
-  background: rgb(228, 159, 255);
+  background: var(--beige-color);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
   transition: all 0.3s;
+  overflow: hidden;
 }
 .monster-card:hover {
-  box-shadow: 0 2rem 3rem rgba(217, 151, 255, 0.7);
+  box-shadow: 0 1rem 1.5rem rgba(219, 206, 175, 0.7);
   transform: translateY(-0.5rem);
   z-index: 1;
 }
-.monster-img {
-  border-radius: 1rem;
-  min-height: 23rem;
-  width: 20rem;
-  border: 0.01rem solid #000;
+.monster-card:hover .name{
+    padding: .5rem 10rem;
+  }
+.monster-card:hover .monster-info{
+    display: block;
 }
-.monster-card:hover .monster-info,
-.monster-card:hover .name {
-  display: block;
-}
-.monster-card:hover .monster-img {
-  display: none;
+.monster-card:hover .addbtn,
+.monster-card:hover .learnbtn{
+    display: block;
 }
 .addbtn,
 .learnbtn {
+  display: none;
   height: 3.5rem;
   line-height: 3.5rem;
   padding: 0 2.5rem;
@@ -81,7 +85,6 @@
 }
 .addbtn {
   background-color: var(--yellow-color);
-  display: block;
 }
 .addbtn:hover {
   box-shadow: 0 0.5rem 1rem rgba(255, 236, 151, 0.7);
@@ -95,27 +98,25 @@
   z-index: 1;
 }
 .monster-info {
-  display: none;
   line-height: 150%;
   font-family: var(--sub-font);
   margin-top: 1rem;
+  display: none;
 }
 .name {
   font: 1.8rem var(--sub-font);
   letter-spacing: 0.1rem;
   font-weight: 900;
-  display: none;
+  padding: 2rem;
+  background-color: var(--yellow-color);
 }
 .stats-grid {
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
   font-size: 2rem;
-  gap: 0;
+  gap: .75rem;
   transition: all 0.5s;
-}
-.monster-card:hover .stats-grid {
-  gap: 0.75rem;
 }
 .addbtn,
 .stats-grid {
@@ -134,9 +135,6 @@
 }
 .selected-box {
   margin-top: 2rem;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
   gap: 1rem;
 }
 .card-box {
