@@ -44,6 +44,7 @@
     background-color: #e25037;
 }
 .card-box {
+    grid-template-columns: repeat( auto-fit, minmax(20rem, 1fr) );
     gap: 1rem;
 }
 .card-box, .selected-box {
