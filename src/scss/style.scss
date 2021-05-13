@@ -28,14 +28,11 @@ body * {
 }
 body {
   background: var(--gray-color);
-  display: flex;
-  flex-direction: column;
 }
 .navbox {
   max-width: 100%;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
 }
 nav {
   min-width: 40%;
