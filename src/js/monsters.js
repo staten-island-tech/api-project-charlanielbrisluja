@@ -64,12 +64,15 @@ const listen = function () {
     DOMSelectors.searchForm.addEventListener("submit", function (e) {
       e.preventDefault();
       DOMSelectors.cardBox.innerHTML = "";
-      const searchWords = DOMSelectors.searchBox.value;
+      const searchWords = DOMSelectors.searchBox.value.replace(/\s+/g, '-').toLowerCase();
       const searchQuery = async function() {
           try {
               const response = await fetch(`https://www.dnd5eapi.co/api/monsters/${searchWords}`);
               const data = await response.json();
-              console.log(data);
+              if (data.hasOwnProperty('error')) {
+                alert("No monster found. Check for spelling errors.");
+                query();
+              }
                 DOMSelectors.cardBox.insertAdjacentHTML ("beforeend", `<div class="monster-card">
                   <h2 class="name">${data.name}</h2>
                   <div class="monster-info">
@@ -87,10 +90,9 @@ const listen = function () {
                   </div>
                   </div>`);
                }
-    
                catch (error) {
                   console.log(error);
-                  alert("No monster found. Check for misspelling.");
+                  alert("No monster found. Check for spelling errors.");
                   query();
               }
       };
