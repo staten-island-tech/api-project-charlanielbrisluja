@@ -15,13 +15,13 @@
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
-.search-form-btn {
+.searchbtn {
   width: 4.5rem;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
   background-color: var(--yellow-color);
 }
-.monster-search, .search-form-btn {
+.monster-search, .searchbtn {
   border: 0.1rem solid var(--black-color);
   height: 4rem;
 }
@@ -29,7 +29,7 @@
   font-size: 1.6rem;
   font-weight: 400;
 }
-.search-form-btn:hover {
+.searchbtn:hover {
   background-color: var(--darkyellow-color);
 }
 .search-reset {
@@ -87,8 +87,7 @@
     display: block;
 }
 .addbtn,
-.learnbtn,
-.searchbtn {
+.learnbtn {
   display: none;
   height: 3.5rem;
   line-height: 3.5rem;
@@ -101,19 +100,17 @@
 .addbtn {
   background-color: var(--yellow-color);
 }
-.learnbtn, .searchbtn {
+.learnbtn {
   background-color: var(--white-color);
 }
 .addbtn:hover {
   box-shadow: 0 0.5rem 1rem rgba(255, 236, 151, 0.7);
 }
-.learnbtn:hover,
-.searchbtn:hover {
+.learnbtn:hover {
   box-shadow: 0 0.5rem 1rem rgba(255, 255, 255, 0.7);
 }
 .addbtn:hover,
-.learnbtn:hover,
-.searchbtn:hover {
+.learnbtn:hover {
   transform: translateY(-0.3rem);
   z-index: 1;
 }
@@ -142,8 +139,7 @@
 .stats-grid {
   margin-top: 1.5rem;
 }
-.learnbtn,
-.searchbtn {
+.learnbtn {
   margin-top: 0.5rem;
 }
 .monster-description {
@@ -174,12 +170,10 @@
     height: 2rem;
 }
 .monster-popup {
-    display: none;
     position: absolute;
     z-index: 1;
     top: 10%;
-    left: 10%;
     width: 80%;
-    min-height: 80%;
+    min-height: 50%;
     background-color: white;
 }

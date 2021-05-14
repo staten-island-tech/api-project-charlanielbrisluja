@@ -28,7 +28,6 @@ if (DOMSelectors.moreButton.innerHTML === "More space") {
             <h3 class="monster-description">Search for this monster above to find more information!</h3>
             </div>
             <button class="addbtn">Add monster</button>
-            <button class="searchbtn">Search monster</button>
       </div>
     </div>`);
         });
@@ -67,8 +66,6 @@ const search = function () {
                   <div class="stats-grid">
                   <h3>AC: ${data.armor_class}</h3>
                   <h3>HP: ${data.hit_points}</h3>
-                  <h3>CR: ${data.challenge_rating}</h3>
-                  <h3>XP: ${data.xp}</h3>
                   </div>
                   </div>
                   <button class="addbtn">Add monster</button>
