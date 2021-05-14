@@ -18,7 +18,6 @@
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
   background-color: var(--yellow-color);
-  transition: all 0.1s;
 }
 .monster-search, .searchbtn {
   border: 0.1rem solid var(--black-color);
@@ -35,7 +34,6 @@
   height: 3.8rem;
   padding: 0 1.5rem;
   border: .001rem solid #444444;
-  transition: all 0.1s;
   font: 1.4rem var(--sub-font);
   background-color: #ff5e42;
   margin-right: 2rem;
