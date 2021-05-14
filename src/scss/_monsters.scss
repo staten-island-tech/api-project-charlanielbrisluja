@@ -75,15 +75,15 @@
   transform: translateY(-0.5rem);
   z-index: 1;
 }
-.monster-card:hover .name{
+.monster-card:hover .name {
     padding: 1rem;
     width: 120%;
   }
-.monster-card:hover .monster-info{
+.monster-card:hover .monster-info {
     display: block;
 }
 .monster-card:hover .addbtn,
-.monster-card:hover .learnbtn{
+.monster-card:hover .learnbtn {
     display: block;
 }
 .addbtn,
@@ -128,7 +128,7 @@
   padding: 2rem;
   background-color: var(--yellow-color);
 }
-.stats-grid {
+.stats-grid, .popup-stats, .popup-abilities {
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -172,8 +172,29 @@
 .monster-popup {
     position: absolute;
     z-index: 1;
-    top: 10%;
-    width: 80%;
+    top: 15%;
+    left: 25%;
+    width: 50%;
     min-height: 50%;
     background-color: white;
+}
+.popup-stats, .popup-abilities {
+    margin-top: 3rem;
+    margin-right: 5rem;
+}
+.monster-popup h2 {
+    padding-left: 3rem;
+}
+.monster-popup h3 {
+    padding-left: 3rem;
+    font: 700 1.5rem var(--sub-font);
+    line-height: 200%;
+}
+.fa-times {
+    position: absolute;
+    top: 1.5rem;
+    right: 2rem;
+
+    font-size: 3rem;
+    font-weight: 100;
 }
