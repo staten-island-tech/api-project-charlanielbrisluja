@@ -7,5 +7,6 @@ const DOMSelectors = {
     searchForm: document.querySelector(".search-form"),
     searchBox: document.querySelector(".monster-search"),
     resetButton: document.querySelector(".search-reset"),
+    searchButton: document.querySelector(".searchbtn"),
 }
 export { DOMSelectors };
