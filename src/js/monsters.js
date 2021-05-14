@@ -7,22 +7,6 @@ window.addEventListener('beforeunload', function (e) {
     e.returnValue = '';
   });
 
-
-/*
- DOMSelectors.addButton.addEventListener('click', function () { 
-if (DOMSelectors.addButton.innerHTML = "Delete monster") {
-DOMSelectors.cardBox.appendChild(DOMSelectors.monsterCard);
-DOMSelectors.addButton.innerHTML = "Add monster";
-DOMSelectors.addButton.style.backgroundColor = "var(--yellow-color)";  
-} else {
-DOMSelectors.selectedBox.appendChild(DOMSelectors.monsterCard);
-DOMSelectors.addButton.innerHTML = "Delete monster";
-DOMSelectors.addButton.style.backgroundColor = "var(--red-color)";
-DOMSelectors.addButton.style.boxShadow = "none";    
-}
-});
-*/
-
 DOMSelectors.moreButton.addEventListener("click", function () {
 if (DOMSelectors.moreButton.innerHTML === "More space") {
     DOMSelectors.storyArea.style.minHeight = "100rem";
@@ -44,7 +28,6 @@ if (DOMSelectors.moreButton.innerHTML === "More space") {
             <h3 class="monster-description">Search for this monster above to find more information!</h3>
             </div>
             <button class="addbtn">Add monster</button>
-            <button class="learnbtn">Learn more</button>
       </div>
     </div>`);
         });
@@ -59,6 +42,7 @@ DOMSelectors.resetButton.addEventListener("click", function () {
     query();
     DOMSelectors.searchBox.value = "";
 });
+
 const search = function () {
     DOMSelectors.searchForm.addEventListener("submit", function (e) {
       e.preventDefault();
@@ -100,40 +84,8 @@ const search = function () {
     });
   };
   search();
-/*
-const stats = async function() {
-    try {
-        const results = await fetch(`https://www.dnd5eapi.co/api/monsters/${monster.index}`);
-        const info = await results.json();
-        info.results.forEach((monster) => {
-        DOMSelectors.cardBox.insertAdjacentHTML ("beforeend", `<div class="monster-card">
-        <h2 class="name">${monster.name}</h2>
-        <div class="monster-info">
-        <h3 class="type">Type: ${monster.type}</h3>
-        <h3 class="size">Size: ${monster.size}</h3>
-        <div class="stats-grid">
-        <h3>AC: ${monster.armor_class}</h3>
-        <h3>HP: ${monster.hit_points}</h3>
-        <h3>CR: 2</h3>
-        <h3>XP: 450</h3> 
-        </div>
-        </div>
-        <button class="addbtn">Add monster</button>
-        <button class="learnbtn">Learn more</button>
-  </div>
-</div>`
-);
-});
-} catch (error) {
-console.log(error);
-alert("Something went wrong.");
-}
-}
-*/
-//console.log(DOMSelectors.cardBox.children);
-console.log(DOMSelectors.selectedBox.childElementCount);
+
 DOMSelectors.cardBox.addEventListener("click", function (e) {
-console.log(DOMSelectors.selectedBox.childElementCount);
     //makes sure that target is the add button
     if (e.target.innerHTML === "Add monster") {
         //no more empty state
@@ -148,13 +100,11 @@ console.log(DOMSelectors.selectedBox.childElementCount);
     //reverts the original button
     e.target.innerHTML = "Add monster";
     e.target.style.backgroundColor = "var(--yellow-color)";
-//DOMSelectors.selectedBox.insertAdjacentHTML('beforeend', copy);
 }});
 
 DOMSelectors.selectedBox.addEventListener("click", function (e) {
     if (e.target.innerHTML === "Delete monster") {
-        e.target.parentElement.style.display = "none";
-//DOMSelectors.selectedBox.insertAdjacentHTML('beforeend', copy);
+        e.target.parentElement.outerHTML = "";
 }});
 
 
