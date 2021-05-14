@@ -55,12 +55,11 @@ if (DOMSelectors.moreButton.innerHTML === "More space") {
 }
 query(); 
 
-DOMSelectors.resetButton.addEventListener("click", function (e) {
+DOMSelectors.resetButton.addEventListener("click", function () {
     query();
     DOMSelectors.searchBox.value = "";
 });
-
-const listen = function () {
+const search = function () {
     DOMSelectors.searchForm.addEventListener("submit", function (e) {
       e.preventDefault();
       DOMSelectors.cardBox.innerHTML = "";
@@ -100,7 +99,7 @@ const listen = function () {
       
     });
   };
-  listen();
+  search();
 /*
 const stats = async function() {
     try {
