@@ -1,12 +1,15 @@
 #monsterbox {
     position: relative;
-}.search-form {
+}
+.searchbox {
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   margin-bottom: 2rem;
   margin-top: 2rem;
+}
+.searchbox, .search-form {
+display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .monster-search {
   width: 30rem;

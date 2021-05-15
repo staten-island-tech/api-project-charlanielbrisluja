@@ -6,10 +6,7 @@ window.addEventListener('beforeunload', function (e) {
     // Chrome requires returnValue to be set
     e.returnValue = '';
   });
-  String.prototype.capitalize = function() {
-    return this.charAt(0).toUpperCase() + this.slice(1);
-}
-
+  
 DOMSelectors.moreButton.addEventListener("click", function () {
 if (DOMSelectors.moreButton.innerHTML === "More space") {
     DOMSelectors.storyArea.style.minHeight = "100rem";
@@ -42,9 +39,13 @@ if (DOMSelectors.moreButton.innerHTML === "More space") {
 query(); 
 
 DOMSelectors.resetButton.addEventListener("click", function () {
-    query();
+    query(); 
     DOMSelectors.searchBox.value = "";
 });
+
+String.prototype.capitalize = function() {
+    return this.charAt(0).toUpperCase() + this.slice(1);
+}
 
 const search = function () {
     DOMSelectors.searchForm.addEventListener("submit", function (e) {
