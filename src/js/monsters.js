@@ -6,6 +6,9 @@ window.addEventListener('beforeunload', function (e) {
     // Chrome requires returnValue to be set
     e.returnValue = '';
   });
+  String.prototype.capitalize = function() {
+    return this.charAt(0).toUpperCase() + this.slice(1);
+}
 
 DOMSelectors.moreButton.addEventListener("click", function () {
 if (DOMSelectors.moreButton.innerHTML === "More space") {
@@ -60,9 +63,9 @@ const search = function () {
                   <h2 class="name">${data.name}</h2>
                   <div class="monster-info">
                   <h3 class="monster-description">Size: ${data.size}</h3>
-                  <h3 class="monster-description">Type: ${data.type}</h3>
+                  <h3 class="monster-description">Type: ${data.type.capitalize()}</h3>
                   <h3 class="monster-description">Subtype: ${data.subtype}</h3>
-                  <h3 class="monster-description">Alignment: ${data.alignment}</h3>
+                  <h3 class="monster-description">Alignment: ${data.alignment.capitalize()}</h3>
                   <div class="stats-grid">
                   <h3>AC: ${data.armor_class}</h3>
                   <h3>HP: ${data.hit_points}</h3>
@@ -102,11 +105,58 @@ DOMSelectors.cardBox.addEventListener("click", function (e) {
     e.target.style.backgroundColor = "var(--yellow-color)";
 }});
 
+DOMSelectors.cardBox.addEventListener("click", function (e) {
+    if (e.target.innerHTML === "Learn more") {
+        const searchWords = DOMSelectors.searchBox.value.replace(/\s+/g, '-').toLowerCase();
+        const learnMore = async function() {
+            try {
+                const response = await fetch(`https://www.dnd5eapi.co/api/monsters/${searchWords}`);
+                const data = await response.json();
+                  DOMSelectors.monsterBox.insertAdjacentHTML ("beforeend", `<div class="monster-popup">
+                  <h2 class="name">${data.name}</h2>
+                  <i class="fas fa-times"></i>
+                   <div class="popup-stats">
+                    <h3>Size: ${data.size}</h3>
+                    <h3>Type: ${data.type.capitalize()}</h3>
+                    <h3>Subtype: ${data.subtype}</h3>
+                    <h3>Alignment: ${data.alignment.capitalize()}</h3>
+                    <h3>Armor Class: ${data.armor_class}</h3>
+                    <h3>Hit Points: ${data.hit_points}</h3>
+                    <h3>Hit Dice: ${data.hit_dice}</h3> 
+                    <h3>Languages: ${data.languages}</h3> 
+                    <h3>Challenge Rating: ${data.challenge_rating}</h3>
+                    <h3>Experience Points: ${data.xp}</h3> 
+                  </div>
+                  <div class="popup-abilities">
+                    <h3>Strength: ${data.strength}</h3> 
+                    <h3>Dexterity: ${data.dexterity}</h3> 
+                    <h3>Constitution: ${data.constitution}</h3> 
+                    <h3>Intelligence: ${data.intelligence}</h3> 
+                    <h3>Wisdom: ${data.wisdom}</h3> 
+                    <h3>Charisma: ${data.charisma}</h3> 
+                  </div> 
+                </div>`);
+
+                // DOMSelectors.monsterBox.firstChild.addEventListener("click", function () {
+                //     console.log("ok");
+                //     DOMSelectors.monsterBox.innerHTML = "";
+                // });
+                 }
+
+                 catch (error) {
+                    console.log(error);
+                    alert("No monster found. Check for spelling errors.");
+                    query();
+                }
+        };
+        learnMore(); 
+    };
+});
+
 DOMSelectors.selectedBox.addEventListener("click", function (e) {
     if (e.target.innerHTML === "Delete monster") {
         e.target.parentElement.outerHTML = "";
 }});
-
 
 /*
 DOMSelectors.cardBox.childNodes.forEach((card) => {
