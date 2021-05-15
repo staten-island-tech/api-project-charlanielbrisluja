@@ -1,5 +1,11 @@
 import { DOMSelectors } from "./DOM";
+//NOTES
+/*
+1. fix search undefined problem
+2. figure out how to close popup
+3. figure out how to make popup open on click on learnmore button in selected card
 
+*/
 window.addEventListener('beforeunload', function (e) {
     // Cancel the event
     e.preventDefault(); // If you prevent default behavior in Mozilla Firefox prompt will always be shown
@@ -27,7 +33,6 @@ if (DOMSelectors.moreButton.innerHTML === "More space") {
             <div class="monster-info">
             <h3 class="monster-description">Search for this monster above to find more information!</h3>
             </div>
-            <button class="addbtn">Add monster</button>
       </div>
     </div>`);
         });
@@ -104,8 +109,13 @@ DOMSelectors.cardBox.addEventListener("click", function (e) {
     //reverts the original button
     e.target.innerHTML = "Add monster";
     e.target.style.backgroundColor = "var(--yellow-color)";
+    console.log(newCard.lastChild.lastChild.previousSibling);
+    newCard.lastChild.lastChild.previousSibling.addEventListener("click", function () {
+      //THIS DOESNT WORK FOR SOME REASON???
+      //popup();
+    });
 }});
-
+const popup = function () {
 DOMSelectors.cardBox.addEventListener("click", function (e) {
     if (e.target.innerHTML === "Learn more") {
         const searchWords = DOMSelectors.searchBox.value.replace(/\s+/g, '-').toLowerCase();
@@ -153,27 +163,10 @@ DOMSelectors.cardBox.addEventListener("click", function (e) {
         learnMore(); 
     };
 });
+};
+popup();
 
 DOMSelectors.selectedBox.addEventListener("click", function (e) {
     if (e.target.innerHTML === "Delete monster") {
         e.target.parentElement.outerHTML = "";
 }});
-
-/*
-DOMSelectors.cardBox.childNodes.forEach((card) => {
-    card.addEventListener("click", function (card) {
-DOMSelectors.selectedBox.appendChild(card);
-button.innerHTML = "Delete monster";
-button.style.backgroundColor = "var(--red-color)";
-button.style.boxShadow = "none";  
-    });
-    console.log("button");
-});
-
-// buttonArray.forEach((button) => {
-// card.querySelector(".addbtn").addEventListener('click', function (e) { 
-//     console.log("yes");
-// });
-// });
-
-*/
