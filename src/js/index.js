@@ -55,7 +55,7 @@ const search = function () {
     DOMSelectors.searchForm.addEventListener("submit", function (e) {
       e.preventDefault();
       DOMSelectors.cardBox.innerHTML = "";
-      const searchWords = DOMSelectors.searchBox.value.replace(/\s+/g, '-').toLowerCase();
+      const searchWords = DOMSelectors.searchBox.value.replace(".", "").trim().replace(/\s+/g, '-').toLowerCase();
       const searchQuery = async function() {
           try {
               const response = await fetch(`https://www.dnd5eapi.co/api/monsters/${searchWords}`);
@@ -113,7 +113,7 @@ DOMSelectors.cardBox.addEventListener("click", function (e) {
 const popup = function () {
 DOMSelectors.cardBox.addEventListener("click", function (e) {
     if (e.target.innerHTML === "Learn more") {
-        const searchWords = DOMSelectors.searchBox.value.replace(/\s+/g, '-').toLowerCase();
+      const searchWords = DOMSelectors.searchBox.value.replace(".", "").trim().replace(/\s+/g, '-').toLowerCase();
         const learnMore = async function() {
             try {
                 const response = await fetch(`https://www.dnd5eapi.co/api/monsters/${searchWords}`);
