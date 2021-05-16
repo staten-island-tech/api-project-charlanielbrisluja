@@ -1,9 +1,8 @@
 import { DOMSelectors } from "./DOM";
 //NOTES
 /*
-1. fix search undefined problem
-2. figure out how to close popup
-3. figure out how to make popup open on click on learnmore button in selected card
+1. figure out how to close popup
+2. figure out how to make popup open on click on learnmore button in selected card
 
 */
 window.addEventListener('beforeunload', function (e) {
@@ -61,10 +60,6 @@ const search = function () {
           try {
               const response = await fetch(`https://www.dnd5eapi.co/api/monsters/${searchWords}`);
               const data = await response.json();
-              if (data.hasOwnProperty('error')) {
-                alert("No monster found. Check for spelling errors.");
-                query();
-              }
                 DOMSelectors.cardBox.insertAdjacentHTML ("beforeend", `<div class="monster-card">
                   <h2 class="name">${data.name}</h2>
                   <div class="monster-info">
