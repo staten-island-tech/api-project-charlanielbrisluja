@@ -162,6 +162,33 @@ DOMSelectors.cardBox.addEventListener("click", function (e) {
                     <h3>Charisma: ${data.charisma}</h3> 
                   </div> 
                 </div>`);
+                /* BACKUP (IN CASE POPUP DOESNT WORK OUT)
+                alert(`
+                  <h2 class="name">${data.name}</h2>
+                  <i class="fas fa-times"></i>
+                   <div class="popup-stats">
+                    <h3>Size: ${data.size}</h3>
+                    <h3>Type: ${data.type.capitalize()}</h3>
+                    <h3>Subtype: ${data.subtype}</h3>
+                    <h3>Alignment: ${data.alignment.capitalize()}</h3>
+                    <h3>Armor Class: ${data.armor_class}</h3>
+                    <h3>Hit Points: ${data.hit_points}</h3>
+                    <h3>Hit Dice: ${data.hit_dice}</h3> 
+                    <h3>Languages: ${data.languages}</h3> 
+                    <h3>Challenge Rating: ${data.challenge_rating}</h3>
+                    <h3>Experience Points: ${data.xp}</h3> 
+                  </div>
+                  <div class="popup-abilities">
+                    <h3>Strength: ${data.strength}</h3> 
+                    <h3>Dexterity: ${data.dexterity}</h3> 
+                    <h3>Constitution: ${data.constitution}</h3> 
+                    <h3>Intelligence: ${data.intelligence}</h3> 
+                    <h3>Wisdom: ${data.wisdom}</h3> 
+                    <h3>Charisma: ${data.charisma}</h3> 
+                  </div> 
+                  `);
+                  */
+                
 
                 // DOMSelectors.monsterBox.firstChild.addEventListener("click", function () {
                 //     console.log("ok");
