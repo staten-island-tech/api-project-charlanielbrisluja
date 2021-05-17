@@ -60,22 +60,42 @@ const search = function () {
           try {
               const response = await fetch(`https://www.dnd5eapi.co/api/monsters/${searchWords}`);
               const data = await response.json();
+              if (data.subtype != null) {
                 DOMSelectors.cardBox.insertAdjacentHTML ("beforeend", `<div class="monster-card">
-                  <h2 class="name">${data.name}</h2>
-                  <div class="monster-info">
-                  <h3 class="monster-description">Size: ${data.size}</h3>
-                  <h3 class="monster-description">Type: ${data.type.capitalize()}</h3>
-                  <h3 class="monster-description">Subtype: ${data.subtype}</h3>
-                  <h3 class="monster-description">Alignment: ${data.alignment.capitalize()}</h3>
-                  <div class="stats-grid">
-                  <h3>AC: ${data.armor_class}</h3>
-                  <h3>HP: ${data.hit_points}</h3>
-                  </div>
-                  </div>
-                  <button class="addbtn">Add monster</button>
-                  <button class="learnbtn">Learn more</button>
-                  </div>
-                  </div>`);
+                <h2 class="name">${data.name}</h2>
+                <div class="monster-info">
+                <h3 class="monster-description">Size: ${data.size}</h3>
+                <h3 class="monster-description">Type: ${data.type.capitalize()}</h3>
+                <h3 class="monster-description">Subtype: ${data.subtype.capitalize()}</h3>
+                <h3 class="monster-description">Alignment: ${data.alignment.capitalize()}</h3>
+                <div class="stats-grid">
+                <h3>AC: ${data.armor_class}</h3>
+                <h3>HP: ${data.hit_points}</h3>
+                </div>
+                </div>
+                <button class="addbtn">Add monster</button>
+                <button class="learnbtn">Learn more</button>
+                </div>
+                </div>`);
+              } else {
+                DOMSelectors.cardBox.insertAdjacentHTML ("beforeend", `<div class="monster-card">
+                <h2 class="name">${data.name}</h2>
+                <div class="monster-info">
+                <h3 class="monster-description">Size: ${data.size}</h3>
+                <h3 class="monster-description">Type: ${data.type.capitalize()}</h3>
+                <h3 class="monster-description">Subtype: ${data.subtype}</h3>
+                <h3 class="monster-description">Alignment: ${data.alignment.capitalize()}</h3>
+                <div class="stats-grid">
+                <h3>AC: ${data.armor_class}</h3>
+                <h3>HP: ${data.hit_points}</h3>
+                </div>
+                </div>
+                <button class="addbtn">Add monster</button>
+                <button class="learnbtn">Learn more</button>
+                </div>
+                </div>`);
+              }
+      
                }
                catch (error) {
                   console.log(error);
