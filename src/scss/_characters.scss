@@ -7,11 +7,11 @@
   position: absolute;
 }
 
-.ugh {
+.character {
   position: relative;
 }
 
-.ugh-inner {
+.character-name {
   position: absolute;
   top: 22rem;
 }
@@ -24,7 +24,8 @@
   left: 24rem;
 }
 
-.characterbox-writing-section {
+.characterbox-writing-section,
+.characterbox-name {
   min-height: 9.5rem;
   display: block;
   border: 0.1rem solid var(--lightgray-color);
@@ -34,16 +35,26 @@
   font-family: var(--sub-font);
 }
 
-.characterbox-writing-section:focus {
+.characterbox-name {
+  min-height: 2rem;
+}
+
+.characterbox-writing-section:focus,
+.characterbox-name:focus {
   border: 0.1rem solid var(--gray-color);
 }
 
-.characterbox-writing-section:before {
+.characterbox-writing-section:before,
+.characterbox-name:before {
   color: var(--lightgray-color);
 }
 
+.characterbox-name:empty::before {
+  content: "Write your NPC's name or title!";
+}
+
 .characterbox-writing-section:empty::before {
-  content: "Write about your setting! It's a good idea to think of what kind of culture the people there would have, how they'd react to outsiders, and other plot-rich factors.";
+  content: "Write about your character! It's a good idea to think of what kind of environment they grew up in, the factors that shaped their motivation and personality, and other plot-rich factors.";
 }
 
 .characterbox-character-textinput {
