@@ -1,42 +1,25 @@
-.characterbox-character {
+.character {
+  border: black solid 0.1rem;
+  padding: 1rem;
   margin-top: 2rem;
 }
 
-.characterbox-image {
-  max-height: 20rem;
-  position: absolute;
-}
-
-.character {
-  position: relative;
-}
-
-.character-name {
-  position: absolute;
-  top: 22rem;
-}
-.characterbox-character-info {
-  position: absolute;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  flex-wrap: wrap;
-  left: 24rem;
-}
-
+.characterbox-character-textinput,
 .characterbox-writing-section,
-.characterbox-name {
+.characterbox-name,
+.level-dropdown {
   min-height: 9.5rem;
-  display: block;
+  display: inline-block;
   border: 0.1rem solid var(--lightgray-color);
   background-color: var(--white-color);
   padding: 1rem;
   font-size: 1.4rem;
   font-family: var(--sub-font);
 }
-
-.characterbox-name {
+.characterbox-name,
+.characterbox-character-textinput {
   min-height: 2rem;
+  width: 25%;
 }
 
 .characterbox-writing-section:focus,
@@ -57,19 +40,6 @@
   content: "Write about your character! It's a good idea to think of what kind of environment they grew up in, the factors that shaped their motivation and personality, and other plot-rich factors.";
 }
 
-.characterbox-character-textinput {
-  display: block;
-  border: 0.1rem solid var(--lightgray-color);
-  background-color: var(--white-color);
-  padding: 1rem;
-  font-size: 1.4rem;
-  font-family: var(--sub-font);
-  min-height: 2rem;
-  width: 25rem;
-  margin-bottom: 2rem;
-  margin-top: 2rem;
-}
-
 .characterbox-character-textinput:focus {
   border: 0.1rem solid var(--gray-color);
 }
@@ -81,23 +51,42 @@
   content: "";
 }
 
-.characterbox-addbutton {
-  position: absolute;
-  top: 30rem;
-  right: 0rem;
+.level-dropdown {
+  min-height: 2rem;
+  min-width: 7rem;
+}
+
+//css for add button, doesn't matter as there is no add button rn
+.button-box {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 2rem;
+}
+.characterbox-addbutton,
+.characterbox-deletebutton {
   height: 3.5rem;
   line-height: 3.5rem;
   padding: 0 2.5rem;
-  border: none;
+  border: solid black 0.1rem;
   border-radius: 0.5rem;
   margin-top: 1rem;
+  margin-left: 1rem;
   transition: all 0.3s;
   font: 800 1.2rem var(--sub-font);
   background-color: var(--yellow-color);
 }
 
-.characterbox-addbutton:hover {
+.characterbox-deletebutton {
+  background-color: #ff5e42;
+}
+.characterbox-addbutton:hover,
+.characterbox-deletebutton:hover {
   box-shadow: 0 0.5rem 1rem rgba(255, 236, 151, 0.7);
   transform: translateY(-0.5rem);
   z-index: 1;
+}
+
+.characterbox-deletebutton:hover {
+  box-shadow: 0 0.5rem 1rem #e25037;
 }

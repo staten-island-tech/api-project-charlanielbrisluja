@@ -242,5 +242,13 @@ DOMSelectors.selectedBox.addEventListener("click", function (e) {
   }
 });
 
-//characterbox add characters js
-DOMSelectors.characterButton.addEventListener("click", function (e) {});
+//characterbox add/delete characters js
+
+DOMSelectors.characterButton.addEventListener("click", function () {
+  const character = DOMSelectors.character;
+  const characterClone = character.cloneNode(true);
+  character.before(characterClone);
+  DOMSelectors.deleteButton.addEventListener("click", function () {
+    characterClone.remove();
+  });
+});

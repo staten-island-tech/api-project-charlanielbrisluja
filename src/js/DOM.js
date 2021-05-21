@@ -10,6 +10,8 @@ const DOMSelectors = {
   resetButton: document.querySelector(".search-reset"),
   monsterPopup: document.querySelector(".monster-popup"),
   closeIcon: document.querySelector(".fa-times"),
+  character: document.querySelector(".character"),
   characterButton: document.querySelector(".characterbox-addbutton"),
+  deleteButton: document.querySelector(".characterbox-deletebutton"),
 };
 export { DOMSelectors };
