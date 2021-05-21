@@ -43,7 +43,8 @@ if (DOMSelectors.moreButton.innerHTML === "More space") {
 query(); 
 
 DOMSelectors.resetButton.addEventListener("click", function () {
-    query(); 
+  DOMSelectors.cardBox.firstChild.outerHTML = "";
+  query(); 
     DOMSelectors.searchBox.value = "";
 });
 
@@ -83,7 +84,7 @@ const search = function () {
                 <div class="monster-info">
                 <h3 class="monster-description">Size: ${data.size}</h3>
                 <h3 class="monster-description">Type: ${data.type.capitalize()}</h3>
-                <h3 class="monster-description">Subtype: ${data.subtype}</h3>
+                <h3 class="monster-description">Subtype: Null</h3>
                 <h3 class="monster-description">Alignment: ${data.alignment.capitalize()}</h3>
                 <div class="stats-grid">
                 <h3>AC: ${data.armor_class}</h3>
@@ -117,6 +118,7 @@ DOMSelectors.cardBox.addEventListener("click", function (e) {
         //changes the original button to prepare for copying
         e.target.innerHTML = "Delete monster";
         e.target.style.backgroundColor = "var(--red-color)";
+        e.target.nextElementSibling.style.display = "none";
         //copies and appends the element
         const newCard = document.createElement("div");
         newCard.insertAdjacentHTML ("beforeend", e.target.parentElement.outerHTML);
@@ -124,7 +126,9 @@ DOMSelectors.cardBox.addEventListener("click", function (e) {
     //reverts the original button
     e.target.innerHTML = "Add monster";
     e.target.style.backgroundColor = "var(--yellow-color)";
-    console.log(newCard.lastChild.lastChild.previousSibling);
+    e.target.nextElementSibling.style.display = "block";
+//console.log(newCard.lastChild.lastChild.previousSibling);
+    
     newCard.lastChild.lastChild.previousSibling.addEventListener("click", function () {
       //THIS DOESNT WORK FOR SOME REASON???
       //popup();
@@ -138,7 +142,7 @@ DOMSelectors.cardBox.addEventListener("click", function (e) {
             try {
                 const response = await fetch(`https://www.dnd5eapi.co/api/monsters/${searchWords}`);
                 const data = await response.json();
-                  DOMSelectors.monsterBox.insertAdjacentHTML ("beforeend", `<div class="monster-popup">
+                  DOMSelectors.cardBox.insertAdjacentHTML ("beforeend", `<div class="monster-popup">
                   <h2 class="name">${data.name}</h2>
                   <i class="fas fa-times"></i>
                    <div class="popup-stats">
@@ -188,18 +192,11 @@ DOMSelectors.cardBox.addEventListener("click", function (e) {
                   </div> 
                   `);
                   */
-                
-
-                // DOMSelectors.monsterBox.firstChild.addEventListener("click", function () {
-                //     console.log("ok");
-                //     DOMSelectors.monsterBox.innerHTML = "";
-                // });
+          
                  }
-
-                 catch (error) {
+                  catch (error) {
                     console.log(error);
-                    alert("No monster found. Check for spelling errors.");
-                    query();
+                    alert("Something went wrong. Try again later.");
                 }
         };
         learnMore(); 
@@ -207,6 +204,14 @@ DOMSelectors.cardBox.addEventListener("click", function (e) {
 });
 };
 popup();
+
+const closePopup = function () {
+  DOMSelectors.cardBox.addEventListener("click", function () {
+    DOMSelectors.cardBox.lastChild.outerHTML = "";
+    //     DOMSelectors.monsterBox.innerHTML = "";
+  });
+};
+closePopup();
 
 DOMSelectors.selectedBox.addEventListener("click", function (e) {
     if (e.target.innerHTML === "Delete monster") {
