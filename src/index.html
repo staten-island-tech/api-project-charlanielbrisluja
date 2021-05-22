@@ -139,19 +139,40 @@
 <div class="container" id="characterbox">
 <h1>Characters</h1>
 <div class="character">
-<div class="characterbox-specific-input"> 
+<div class="name-race-class-level"> 
   <!-- div with name, race, class, and level -->
 <p  class="label">Name</p>
-<span class="characterbox-name"role="textbox" contenteditable="true"></span>
+<span class="character-input"role="textbox" contenteditable="true"></span>
 <p class="label">Race</p>
-<span  class="characterbox-character-textinput" role="textbox" contenteditable="true"></span>
+<select class="dropdown">
+  <option value="dragonborn">Dragonborn</option>
+  <option value="dwarf">Dwarf</option> 
+  <option value="elf">Elf</option> 
+  <option value="gnome">Gnome</option>
+  <option value="half-elf">Half-elf</option>
+  <option value="half-orc">Half-orc</option>   
+  <option value="halfling">Halfling</option>  
+  <option value="human">Human</option> 
+  <option value="tiefling">Tiefling</option>    
+</select>
 <p class="label">Class</p>
-<span   class="characterbox-character-textinput" role="textbox" contenteditable="true"></span>
+<select class="dropdown">
+  <option value="barbarian">Barbarian</option>
+  <option value="bard">Bard</option>
+  <option value="cleric">Cleric</option>
+  <option value="druid">Druid</option>
+  <option value="fighter">Fighter</option>
+  <option value="monk">Monk</option>
+  <option value="paladin">Palidan</option>
+  <option value="ranger">Ranger</option>
+  <option value="rogue">Rogue</option>
+  <option value="sorcerer">sorcerer</option>
+  <option value="warlock">Warlock</option>
+  <option value="wizard">Wizard</option>
+</select>
 <p class="label">Level</p>
 <!-- form for level select -->
-<form>
-  <select class = "level-dropdown">
-    <div class="level-option">
+  <select class = "dropdown">
      <option  value = "1" selected>1</option>
      <option value = "2">2</option>
      <option value = "3">3</option>
@@ -172,9 +193,7 @@
      <option value = "18">18</option>
      <option value = "19">19</option>
      <option value = "20">20</option>
-    </div>
   </select>
-</form>
 </div>
 <div class="characterbox-basic-info">
 <!-- basic info div -->
@@ -182,11 +201,11 @@
 <span class="characterbox-writing-section"   role="textbox" contenteditable="true"></span>
 </div>
 <div class="button-box">
-<button class="characterbox-deletebutton" >Delete character</button>
+<button class="deletebutton" >Delete character</button>
 </div>
 </div>
 <div class="button-box">
-<button class="characterbox-addbutton">Add another character</button> 
+<button class="addbutton">Add another character</button> 
 </div>
 </div>
 

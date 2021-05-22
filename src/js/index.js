@@ -242,13 +242,24 @@ DOMSelectors.selectedBox.addEventListener("click", function (e) {
   }
 });
 
+//settingsbox add header and content to boxes
+//on click of choose setting button, take settingbox-card-heading and settingbox-card-information and put it in form as text
+
+// const settingHeader = DOMSelectors.settingHeader;
+// console.log(settingHeader[3].textContent);
+//issues: settingHeader returns a node list of elements, and settingAdd returns an html list of elements. bubbling??event delegation??
+
 //characterbox add/delete characters js
 
 DOMSelectors.characterButton.addEventListener("click", function () {
   const character = DOMSelectors.character;
   const characterClone = character.cloneNode(true);
   character.before(characterClone);
-  DOMSelectors.deleteButton.addEventListener("click", function () {
-    characterClone.remove();
-  });
 });
+DOMSelectors.deleteButton.addEventListener("click", function (e) {
+  if (e.target.innerHTML === "Delete character") {
+    e.target.parentElement.parentElement.outerHTML = "";
+  }
+});
+
+//api stuff for race and class
