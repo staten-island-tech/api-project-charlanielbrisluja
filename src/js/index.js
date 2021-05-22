@@ -11,7 +11,8 @@ window.addEventListener('beforeunload', function (e) {
     // Chrome requires returnValue to be set
     e.returnValue = '';
   });
-  
+
+// Story section
 DOMSelectors.moreButton.addEventListener("click", function () {
 if (DOMSelectors.moreButton.innerHTML === "More space") {
     DOMSelectors.storyArea.style.minHeight = "100rem";
@@ -22,6 +23,7 @@ if (DOMSelectors.moreButton.innerHTML === "More space") {
 }
 });
 
+// Monsters section
   const query = async function() {
     try {
         const response = await fetch('https://www.dnd5eapi.co/api/monsters');
@@ -37,7 +39,7 @@ if (DOMSelectors.moreButton.innerHTML === "More space") {
         });
     } catch (error) {
         console.log(error);
-        alert("Something went wrong. Try again later.");
+        alert(`The selection of "Monsters" is currently not working. Please try again later.`);
     }
 }
 query(); 
@@ -86,11 +88,7 @@ const search = function () {
                 <h3 class="monster-description">Type: ${data.type.capitalize()}</h3>
                 <h3 class="monster-description">Subtype: Null</h3>
                 <h3 class="monster-description">Alignment: ${data.alignment.capitalize()}</h3>
-                <div class="stats-grid">
-                <h3>AC: ${data.armor_class}</h3>
-                <h3>HP: ${data.hit_points}</h3>
-                </div>
-                </div>
+               </div>
                 <button class="addbtn">Add monster</button>
                 <button class="learnbtn">Learn more</button>
                 </div>
@@ -110,7 +108,8 @@ const search = function () {
   };
   search();
 
-DOMSelectors.cardBox.addEventListener("click", function (e) {
+const addMonster = function () {
+  DOMSelectors.cardBox.addEventListener("click", function (e) {
     //makes sure that target is the add button
     if (e.target.innerHTML === "Add monster") {
         //no more empty state
@@ -127,13 +126,11 @@ DOMSelectors.cardBox.addEventListener("click", function (e) {
     e.target.innerHTML = "Add monster";
     e.target.style.backgroundColor = "var(--yellow-color)";
     e.target.nextElementSibling.style.display = "block";
-//console.log(newCard.lastChild.lastChild.previousSibling);
-    
-    newCard.lastChild.lastChild.previousSibling.addEventListener("click", function () {
-      //THIS DOESNT WORK FOR SOME REASON???
-      //popup();
-    });
-}});
+    };
+});
+};
+addMonster();
+
 const popup = function () {
 DOMSelectors.cardBox.addEventListener("click", function (e) {
     if (e.target.innerHTML === "Learn more") {
@@ -166,37 +163,10 @@ DOMSelectors.cardBox.addEventListener("click", function (e) {
                     <h3>Charisma: ${data.charisma}</h3> 
                   </div> 
                 </div>`);
-                /* BACKUP (IN CASE POPUP DOESNT WORK OUT)
-                alert(`
-                  <h2 class="name">${data.name}</h2>
-                  <i class="fas fa-times"></i>
-                   <div class="popup-stats">
-                    <h3>Size: ${data.size}</h3>
-                    <h3>Type: ${data.type.capitalize()}</h3>
-                    <h3>Subtype: ${data.subtype}</h3>
-                    <h3>Alignment: ${data.alignment.capitalize()}</h3>
-                    <h3>Armor Class: ${data.armor_class}</h3>
-                    <h3>Hit Points: ${data.hit_points}</h3>
-                    <h3>Hit Dice: ${data.hit_dice}</h3> 
-                    <h3>Languages: ${data.languages}</h3> 
-                    <h3>Challenge Rating: ${data.challenge_rating}</h3>
-                    <h3>Experience Points: ${data.xp}</h3> 
-                  </div>
-                  <div class="popup-abilities">
-                    <h3>Strength: ${data.strength}</h3> 
-                    <h3>Dexterity: ${data.dexterity}</h3> 
-                    <h3>Constitution: ${data.constitution}</h3> 
-                    <h3>Intelligence: ${data.intelligence}</h3> 
-                    <h3>Wisdom: ${data.wisdom}</h3> 
-                    <h3>Charisma: ${data.charisma}</h3> 
-                  </div> 
-                  `);
-                  */
-          
                  }
                   catch (error) {
                     console.log(error);
-                    alert("Something went wrong. Try again later.");
+                    alert("Something went wrong on our end. Try again later.");
                 }
         };
         learnMore(); 
