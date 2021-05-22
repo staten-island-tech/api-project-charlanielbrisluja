@@ -1,7 +1,7 @@
 const DOMSelectors = {
   moreButton: document.querySelector(".morebtn"),
   storyArea: document.querySelector(".storyarea"),
-  settingHeader: document.querySelectorAll(".settingbox-card-heading"),
+  settingHeader: document.querySelector(".settingbox-card-heading"),
   settingInfo: document.querySelector(".settingbox-card-information"),
   settingAdd: document.getElementsByClassName(".settingbox-card-add"),
   monsterBox: document.querySelector("#monsterbox"),
@@ -14,6 +14,8 @@ const DOMSelectors = {
   monsterPopup: document.querySelector(".monster-popup"),
   closeIcon: document.querySelector(".fa-times"),
   character: document.querySelector(".character"),
+  raceBox: document.querySelector(".race-box"),
+  classBox: document.querySelector(".class-box"),
   characterButton: document.querySelector(".addbutton"),
   deleteButton: document.querySelector(".deletebutton"),
 };

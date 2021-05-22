@@ -244,7 +244,6 @@ DOMSelectors.selectedBox.addEventListener("click", function (e) {
 
 //settingsbox add header and content to boxes
 //on click of choose setting button, take settingbox-card-heading and settingbox-card-information and put it in form as text
-
 // const settingHeader = DOMSelectors.settingHeader;
 // console.log(settingHeader[3].textContent);
 //issues: settingHeader returns a node list of elements, and settingAdd returns an html list of elements. bubbling??event delegation??
@@ -252,14 +251,124 @@ DOMSelectors.selectedBox.addEventListener("click", function (e) {
 //characterbox add/delete characters js
 
 DOMSelectors.characterButton.addEventListener("click", function () {
+  const newCharacter = document.createElement("div");
+  newCharacter.insertAdjacentHTML(
+    "beforeend",
+    `<div class="character">
+  <div class="name-race-class-level"> 
+    <div class="character-labels">
+      <p  class="label">Name</p>
+      <p class="label">Race</p>
+      <p class="label">Class</p>
+      <p class="label">Level</p>
+    </div>
+    <div class="name-and-selects">
+  <span class="character-input"role="textbox" contenteditable="true"></span>
+  <div class="race-box">
+  </div>
+  <div class="class-box">
+  </div>
+    <select class = "dropdown">
+       <option  value = "1" selected>1</option>
+       <option value = "2">2</option>
+       <option value = "3">3</option>
+       <option value = "4">4</option>
+       <option value = "5">5</option>
+       <option value = "6">6</option>
+       <option value = "7">7</option>
+       <option value = "8">8</option>
+       <option value = "9">9</option>
+       <option value = "10">10</option>
+       <option value = "11">11</option>
+       <option value = "12">12</option>
+       <option value = "13">13</option>
+       <option value = "14">14</option>
+       <option value = "15">15</option>
+       <option value = "16">16</option>
+       <option value = "17">17</option>
+       <option value = "18">18</option>
+       <option value = "19">19</option>
+       <option value = "20">20</option>
+    </select>
+  </div>
+  </div>
+  <div class="characterbox-basic-info">
+  <p class="label" >Basic information</p>
+  <span class="characterbox-writing-section"   role="textbox" contenteditable="true"></span>
+  </div>
+  <div class="button-box">
+  <button class="deletebutton" >Delete character</button>
+  </div>
+  </div>`
+  );
   const character = DOMSelectors.character;
-  const characterClone = character.cloneNode(true);
-  character.before(characterClone);
+  character.before(newCharacter);
 });
 DOMSelectors.deleteButton.addEventListener("click", function (e) {
   if (e.target.innerHTML === "Delete character") {
     e.target.parentElement.parentElement.outerHTML = "";
   }
 });
+// const character = DOMSelectors.character;
+// const characterClone = character.cloneNode(true);
+// character.before(characterClone);
 
-//api stuff for race and class
+//api stuff for race and class...there is almost certainly a more effecient way to do this
+const race = function () {
+  const raceInsert = async function () {
+    try {
+      const response = await fetch(`https://www.dnd5eapi.co/api/races`);
+      const raceData = await response.json();
+      DOMSelectors.raceBox.insertAdjacentHTML(
+        "beforeend",
+        `<select class="dropdown">
+        <option value="">${raceData.results[0].name}</option>
+        <option value="">${raceData.results[1].name}</option> 
+        <option value="">${raceData.results[2].name}</option> 
+        <option value="">${raceData.results[3].name}</option>
+        <option value="">${raceData.results[4].name}</option>
+        <option value="">${raceData.results[5].name}</option>   
+        <option value="">${raceData.results[6].name}</option>  
+        <option value="">${raceData.results[7].name}</option> 
+        <option value="">${raceData.results[8].name}</option>    
+      </select>`
+      );
+    } catch (error) {
+      console.log(error);
+      alert("Get wrecked loser");
+    }
+  };
+  raceInsert();
+};
+race();
+
+const characterClass = function () {
+  const classInsert = async function () {
+    try {
+      const response = await fetch(`https://www.dnd5eapi.co/api/classes`);
+      const classData = await response.json();
+      DOMSelectors.classBox.insertAdjacentHTML(
+        "beforeend",
+        `<select class="dropdown">
+        <option value="">${classData.results[0].name}</option>
+        <option value="">${classData.results[1].name}</option> 
+        <option value="">${classData.results[2].name}</option> 
+        <option value="">${classData.results[3].name}</option>
+        <option value="">${classData.results[4].name}</option>
+        <option value="">${classData.results[5].name}</option>   
+        <option value="">${classData.results[6].name}</option>  
+        <option value="">${classData.results[7].name}</option> 
+        <option value="">${classData.results[8].name}</option>    
+        <option value="">${classData.results[9].name}</option>
+        <option value="">${classData.results[10].name}</option>
+        <option value="">${classData.results[11].name}</option>
+      </select>`
+      );
+    } catch (error) {
+      console.log(error);
+      alert("Get wrecked loser");
+    }
+  };
+  classInsert();
+};
+characterClass();

@@ -51,13 +51,27 @@
   min-height: 2rem;
   min-width: 7rem;
 }
-.name-race-class-level {
+.name-race-class-level,
+.name-and-selects,
+.character-labels {
   display: flex;
-  justify-content: space-evenly;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: left;
 }
 .character-input {
   min-height: 2rem;
   width: 25%;
+}
+.name-and-selects {
+  margin-bottom: 1rem;
+}
+.dropdown,
+.character-input {
+  margin-right: 7rem;
+}
+.label {
+  width: 22%;
 }
 //css for add button, doesn't matter as there is no add button rn
 .button-box {
