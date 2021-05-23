@@ -213,12 +213,15 @@ h1 {
   h1 {
     font-size: 4rem;
   }
+  nav {
+    min-width: 60%;
+    max-width: 100%;
+  }
   .nav-text {
     display: none;
   }
   nav i {
-    display: block;
-    padding: 0 7rem;
+    padding: 0 3rem;
     font-size: 4rem;
   }
 }
