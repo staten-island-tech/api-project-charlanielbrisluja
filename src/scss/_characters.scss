@@ -8,6 +8,8 @@
 .race-class,
 .characterbox-writing-section,
 .character-input,
+.race-select,
+.class-select,
 .dropdown {
   min-height: 9.5rem;
   display: inline-block;
@@ -47,6 +49,8 @@
   content: "";
 }
 
+.race-select,
+.class-select,
 .dropdown {
   min-height: 2rem;
   min-width: 7rem;
@@ -66,6 +70,8 @@
 .name-and-selects {
   margin-bottom: 2rem;
 }
+.race-select,
+.class-select,
 .dropdown,
 .character-input {
   margin-right: 7rem;

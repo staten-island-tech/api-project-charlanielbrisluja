@@ -243,29 +243,38 @@ DOMSelectors.selectedBox.addEventListener("click", function (e) {
 });
 
 //settingsbox add header and content to boxes
-//on click of choose setting button, take settingbox-card-heading and settingbox-card-information and put it in form as text
+DOMSelectors.settingCards.addEventListener("click", function (e) {
+  if (e.target.innerHTML === "Choose setting") {
+    DOMSelectors.settingInput.innerHTML =
+      e.target.parentElement.firstChild.nextElementSibling.innerHTML;
+  }
+  console.log(e.target.parentElement.firstChild.nextElementSibling.innerHTML);
+});
 // const settingHeader = DOMSelectors.settingHeader;
 // console.log(settingHeader[3].textContent);
-//issues: settingHeader returns a node list of elements, and settingAdd returns an html list of elements. bubbling??event delegation??
 
 //characterbox add/delete characters js
 
 DOMSelectors.characterButton.addEventListener("click", function () {
-  const character = DOMSelectors.character;
+  const character = DOMSelectors.characterBox.children[1];
   const characterClone = character.cloneNode(true);
-  character.before(characterClone);
+  DOMSelectors.characterBox.append(characterClone);
+  console.log(characterClone.className);
 });
-
-DOMSelectors.deleteButton.addEventListener("click", function (e) {
+DOMSelectors.characterBox.addEventListener("click", function (e) {
   if (e.target.innerHTML === "Delete character") {
-    e.target.parentElement.parentElement.outerHTML = "";
+    if (DOMSelectors.characterBox.children.length === 3) {
+      alert("i hate you please die"); //perfect
+    } else {
+      e.target.parentElement.parentElement.outerHTML = "";
+    }
   }
 });
 
-/*const newCharacter = document.createElement("div");
-newCharacter.insertAdjacentHTML(
-  "beforeend",
-  `<div class="character">
+/*  
+  DOMSelectors.characterBox.insertAdjacentHTML(
+    "beforeend",
+    `<div class="character">
  <div class="name-race-class-level"> 
    <div class="character-labels">
      <p  class="label">Name</p>
@@ -275,10 +284,8 @@ newCharacter.insertAdjacentHTML(
    </div>
    <div class="name-and-selects">
  <span class="character-input"role="textbox" contenteditable="true"></span>
- <div class="race-box">
- </div>
- <div class="class-box">
- </div>
+ <select  class="race-select"></select>
+ <select class="class-select"></select>
    <select class = "dropdown">
       <option  value = "1" selected>1</option>
       <option value = "2">2</option>
@@ -311,28 +318,20 @@ newCharacter.insertAdjacentHTML(
  <button class="deletebutton" >Delete character</button>
  </div>
  </div>`
-);*/
+  );*/
 
-//api stuff for race and class...there is almost certainly a more effecient way to do this
+//api stuff for race and class
 const race = function () {
   const raceInsert = async function () {
     try {
       const response = await fetch(`https://www.dnd5eapi.co/api/races`);
       const raceData = await response.json();
-      DOMSelectors.raceBox.insertAdjacentHTML(
-        "beforeend",
-        `<select class="dropdown">
-        <option value="">${raceData.results[0].name}</option>
-        <option value="">${raceData.results[1].name}</option> 
-        <option value="">${raceData.results[2].name}</option> 
-        <option value="">${raceData.results[3].name}</option>
-        <option value="">${raceData.results[4].name}</option>
-        <option value="">${raceData.results[5].name}</option>   
-        <option value="">${raceData.results[6].name}</option>  
-        <option value="">${raceData.results[7].name}</option> 
-        <option value="">${raceData.results[8].name}</option>    
-      </select>`
-      );
+      raceData.results.forEach((race) => {
+        DOMSelectors.raceSelect.insertAdjacentHTML(
+          "beforeend",
+          `<option value="">${race.name}</option>`
+        );
+      });
     } catch (error) {
       console.log(error);
       alert("Get wrecked loser");
@@ -347,23 +346,12 @@ const characterClass = function () {
     try {
       const response = await fetch(`https://www.dnd5eapi.co/api/classes`);
       const classData = await response.json();
-      DOMSelectors.classBox.insertAdjacentHTML(
-        "beforeend",
-        `<select class="dropdown">
-        <option value="">${classData.results[0].name}</option>
-        <option value="">${classData.results[1].name}</option> 
-        <option value="">${classData.results[2].name}</option> 
-        <option value="">${classData.results[3].name}</option>
-        <option value="">${classData.results[4].name}</option>
-        <option value="">${classData.results[5].name}</option>   
-        <option value="">${classData.results[6].name}</option>  
-        <option value="">${classData.results[7].name}</option> 
-        <option value="">${classData.results[8].name}</option>    
-        <option value="">${classData.results[9].name}</option>
-        <option value="">${classData.results[10].name}</option>
-        <option value="">${classData.results[11].name}</option>
-      </select>`
-      );
+      classData.results.forEach((classOption) => {
+        DOMSelectors.classSelect.insertAdjacentHTML(
+          "beforeend",
+          `<option value="">${classOption.name}</option>`
+        );
+      });
     } catch (error) {
       console.log(error);
       alert("Get wrecked loser");
