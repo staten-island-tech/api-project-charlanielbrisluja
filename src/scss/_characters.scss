@@ -2,7 +2,7 @@
   border: black solid 0.1rem;
   padding: 1rem;
   margin-top: 2rem;
-  background: rgb(228, 159, 255);
+  background: rgb(255, 194, 159);
 }
 
 .race-class,
@@ -86,22 +86,8 @@
   justify-content: flex-end;
   margin-top: 2rem;
 }
-.addbutton,
 .deletebutton {
-  height: 3.5rem;
-  line-height: 3.5rem;
-  padding: 0 2.5rem;
-  border: solid black 0.1rem;
-  border-radius: 0.5rem;
-  margin-top: 1rem;
-  margin-left: 1rem;
-  transition: all 0.3s;
-  font: 800 1.2rem var(--sub-font);
-  background-color: var(--yellow-color);
-}
-
-.deletebutton {
-  background-color: #ff5e42;
+  background-color: var(--red-color);
 }
 .addbutton:hover,
 .deletebutton:hover {
@@ -111,5 +97,5 @@
 }
 
 .deletebutton:hover {
-  box-shadow: 0 0.5rem 1rem #e25037;
+  box-shadow: 0 0.5rem 1rem rgba(255, 106, 113, 0.7);
 }

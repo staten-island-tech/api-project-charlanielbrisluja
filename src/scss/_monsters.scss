@@ -35,30 +35,27 @@ display: flex;
 .search-reset {
   height: 3.8rem;
   padding: 0 1.5rem;
-  border: .001rem solid #444444;
   font: 1.4rem var(--sub-font);
-  background-color: #ff5e42;
+  background-color: var(--orange-color);
   margin-right: 2rem;
+  border: .001rem solid var(--gray-color);
 }
 .search-reset:hover {
-  background-color: #e25037;
-}
-.card-box {
-  grid-template-columns: repeat( auto-fit, minmax(20rem, 1fr) );
-  gap: 1rem;
+  background-color: var(--darkorange-color);
 }
 .card-box, .selected-box {
   padding: 3rem 0;
   max-height: 35rem;
   width: 100%;
   overflow-y: scroll;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  gap: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
 }
 .monster-card {
   height: 27rem;
-  width: 20rem;
+  max-width: 25rem;
+  min-width: 20rem;
   padding: 1rem;
   border: 0.01rem solid #000;
   background: var(--beige-color);
@@ -87,20 +84,25 @@ display: flex;
   display: block;
 }
 .addbtn,
-.learnbtn {
+.learnbtn,
+.addbutton,
+.deletebutton {
   height: 3.5rem;
   line-height: 3.5rem;
   padding: 0 2.5rem;
-  border: none;
   border-radius: 0.5rem;
   transition: all 0.3s;
   font: 800 1.2rem var(--sub-font);
 }
-.addbtn {
-  display: none;
+.addbtn, .addbutton {
+  margin-top: 1.5rem;
   background-color: var(--yellow-color);
 }
+.addbtn {
+  display: none;
+}
 .learnbtn {
+  margin-top: 0.5rem;
   background-color: var(--white-color);
 }
 .addbtn:hover {
@@ -110,7 +112,9 @@ display: flex;
   box-shadow: 0 0.5rem 1rem rgba(255, 255, 255, 0.7);
 }
 .addbtn:hover,
-.learnbtn:hover {
+.learnbtn:hover,
+.addbutton:hover,
+.deletebutton:hover {
   transform: translateY(-0.3rem);
   z-index: 1;
 }
@@ -128,19 +132,12 @@ display: flex;
   padding: 2rem;
   background-color: var(--yellow-color);
 }
-.stats-grid, .popup-stats, .popup-abilities {
+.popup-stats, .popup-abilities {
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
   font-size: 2rem;
   gap: .75rem;
-}
-.addbtn,
-.stats-grid {
-  margin-top: 1.5rem;
-}
-.learnbtn {
-  margin-top: 0.5rem;
 }
 .monster-description {
   font-size: 1.3rem;

@@ -10,6 +10,8 @@
   --lightgray-color: #888;
   --darkyellow-color: #eed97c;
   --beige-color: #dacaa5;
+  --orange-color: #ff5e42;
+  --darkorange-color: #ec573d;
   --main-font: "New Rocker", cursive;
   --sub-font: "Montserrat", sans-serif;
 }
@@ -29,6 +31,9 @@ body * {
 body {
   background: var(--gray-color);
 }
+button {
+  border: none;
+}
 .navbox {
   max-width: 100%;
   display: flex;
@@ -44,6 +49,7 @@ nav {
   vertical-align: center;
   transition: all 0.5s;
   z-index: 2;
+  border: 0.01rem solid var(--black-color);
   ul {
     list-style: none;
     li {
@@ -51,7 +57,7 @@ nav {
       font-family: var(--sub-font);
       border-right: 0.01rem solid var(--black-color);
       border-radius: 0;
-      transition: all 0.5s;
+      transition: all 0.3s;
       padding: 1.675rem 0;
       a {
         color: var(--black-color);
@@ -167,6 +173,10 @@ h1 {
   font: 1.5rem var(--sub-font);
   background-color: var(--yellow-color);
   padding: 1.5rem;
+  border: .001rem solid var(--gray-color);
+}
+.morebtn:hover {
+  background-color: var(--darkyellow-color);
 }
 /* MEDIA QUERIES */
 

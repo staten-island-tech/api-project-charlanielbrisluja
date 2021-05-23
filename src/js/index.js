@@ -84,10 +84,6 @@ const search = function () {
                 <h3 class="monster-description">Type: ${data.type.capitalize()}</h3>
                 <h3 class="monster-description">Subtype: ${data.subtype.capitalize()}</h3>
                 <h3 class="monster-description">Alignment: ${data.alignment.capitalize()}</h3>
-                <div class="stats-grid">
-                <h3>AC: ${data.armor_class}</h3>
-                <h3>HP: ${data.hit_points}</h3>
-                </div>
                 </div>
                 <button class="addbtn">Add monster</button>
                 <button class="learnbtn">Learn more</button>
@@ -200,16 +196,18 @@ popup();
 const closePopup = function () {
   DOMSelectors.cardBox.addEventListener("click", function () {
     DOMSelectors.cardBox.lastChild.outerHTML = "";
-    //     DOMSelectors.monsterBox.innerHTML = "";
   });
 };
 closePopup();
 
-DOMSelectors.selectedBox.addEventListener("click", function (e) {
+const deleteMonster = function () {
+  DOMSelectors.selectedBox.addEventListener("click", function (e) {
   if (e.target.innerHTML === "Delete monster") {
     e.target.parentElement.outerHTML = "";
   }
 });
+};
+deleteMonster();
 
 //settingsbox add header and content to boxes
 DOMSelectors.settingCards.addEventListener("click", function (e) {
