@@ -50,6 +50,8 @@ nav {
   transition: all 0.5s;
   z-index: 2;
   border: 0.01rem solid var(--black-color);
+  padding-top: 0;
+  margin-top: 0;
   ul {
     list-style: none;
     li {
