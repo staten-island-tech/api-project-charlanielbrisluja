@@ -1,32 +1,18 @@
-.characterbox-character {
+.character {
+  border: black solid 0.1rem;
+  padding: 1rem;
   margin-top: 2rem;
+  background: rgb(228, 159, 255);
 }
 
-.characterbox-image {
-  max-height: 20rem;
-  position: absolute;
-}
-
-.ugh {
-  position: relative;
-}
-
-.ugh-inner {
-  position: absolute;
-  top: 22rem;
-}
-.characterbox-character-info {
-  position: absolute;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  flex-wrap: wrap;
-  left: 24rem;
-}
-
-.characterbox-writing-section {
+.race-class,
+.characterbox-writing-section,
+.character-input,
+.race-select,
+.class-select,
+.dropdown {
   min-height: 9.5rem;
-  display: block;
+  display: inline-block;
   border: 0.1rem solid var(--lightgray-color);
   background-color: var(--white-color);
   padding: 1rem;
@@ -34,59 +20,96 @@
   font-family: var(--sub-font);
 }
 
-.characterbox-writing-section:focus {
+.characterbox-writing-section:focus,
+.characterbox-name:focus {
   border: 0.1rem solid var(--gray-color);
 }
 
-.characterbox-writing-section:before {
+.characterbox-writing-section:before,
+.characterbox-name:before {
   color: var(--lightgray-color);
+}
+
+.characterbox-name:empty::before {
+  content: "Write your NPC's name or title!";
 }
 
 .characterbox-writing-section:empty::before {
-  content: "Write about your setting! It's a good idea to think of what kind of culture the people there would have, how they'd react to outsiders, and other plot-rich factors.";
+  content: "Write about your character! It's a good idea to think of what kind of environment they grew up in, the factors that shaped their motivation and personality, and other plot-rich factors.";
 }
 
-.characterbox-character-textinput {
-  display: block;
-  border: 0.1rem solid var(--lightgray-color);
-  background-color: var(--white-color);
-  padding: 1rem;
-  font-size: 1.4rem;
-  font-family: var(--sub-font);
-  min-height: 2rem;
-  width: 25rem;
-  margin-bottom: 2rem;
-  margin-top: 2rem;
-}
-
-.characterbox-character-textinput:focus {
+.race-class:focus {
   border: 0.1rem solid var(--gray-color);
 }
-.characterbox-character-textinput:empty::before {
+.race-class:empty::before {
   content: "";
   color: var(--lightgray-color);
 }
-.characterbox-character-textinput:empty:focus::before {
+.race-class:empty:focus::before {
   content: "";
 }
 
-.characterbox-addbutton {
-  position: absolute;
-  top: 30rem;
-  right: 0rem;
+.race-select,
+.class-select,
+.dropdown {
+  min-height: 2rem;
+  min-width: 7rem;
+}
+.name-race-class-level,
+.name-and-selects,
+.character-labels {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: left;
+}
+.character-input {
+  min-height: 2rem;
+  width: 25%;
+}
+.name-and-selects {
+  margin-bottom: 2rem;
+}
+.race-select,
+.class-select,
+.dropdown,
+.character-input {
+  margin-right: 7rem;
+}
+.label {
+  width: 22%;
+}
+//css for add button, doesn't matter as there is no add button rn
+.button-box {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 2rem;
+}
+.addbutton,
+.deletebutton {
   height: 3.5rem;
   line-height: 3.5rem;
   padding: 0 2.5rem;
-  border: none;
+  border: solid black 0.1rem;
   border-radius: 0.5rem;
   margin-top: 1rem;
+  margin-left: 1rem;
   transition: all 0.3s;
   font: 800 1.2rem var(--sub-font);
   background-color: var(--yellow-color);
 }
 
-.characterbox-addbutton:hover {
+.deletebutton {
+  background-color: #ff5e42;
+}
+.addbutton:hover,
+.deletebutton:hover {
   box-shadow: 0 0.5rem 1rem rgba(255, 236, 151, 0.7);
   transform: translateY(-0.5rem);
   z-index: 1;
+}
+
+.deletebutton:hover {
+  box-shadow: 0 0.5rem 1rem #e25037;
 }
