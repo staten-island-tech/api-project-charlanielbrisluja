@@ -59,16 +59,22 @@ nav {
       border-radius: 0;
       transition: all 0.3s;
       padding: 1.675rem 0;
-      a {
-        color: var(--black-color);
+      .nav-text {
         text-decoration: none;
         font-size: 1.65rem;
-        padding: 1.7rem 5rem;
+        padding-left: 5rem;
+        padding-right: 1.5rem;
         letter-spacing: 0.1rem;
         font-weight: 500;
+        color: var(--black-color);
       }
     }
   }
+}
+nav i {
+  font-size: 2.5rem;
+  padding-right: 3rem;
+  color: var(--gray-color);
 }
 nav li:last-child {
   border-right: none;
@@ -79,7 +85,7 @@ nav:hover li {
 nav li:hover,
 nav li:focus {
   background-color: var(--darkyellow-color);
-  border-radius: 3rem;
+  border-radius: 5rem;
 }
 .container {
   margin: 0 10%;
@@ -205,6 +211,14 @@ h1 {
     top: 2.55rem;
   }
   h1 {
+    font-size: 4rem;
+  }
+  .nav-text {
+    display: none;
+  }
+  nav i {
+    display: block;
+    padding: 0 7rem;
     font-size: 4rem;
   }
 }
