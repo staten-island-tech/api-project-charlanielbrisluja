@@ -150,18 +150,30 @@
 
 <div class="container" id="characterbox">
 <h1>Characters</h1>
+<div class="character-and-add">
 <div class="character">
 <div class="name-race-class-level"> 
-  <div class="character-labels">
+  <!-- <div class="character-labels">
     <p  class="label">Name</p>
     <p class="label">Race</p>
     <p class="label">Class</p>
     <p class="label">Level</p>
-  </div>
+  </div> -->
   <div class="name-and-selects">
+    <div class="name-label-box">
+    <p  class="label">Name</p>
 <span class="character-input"role="textbox" contenteditable="true"></span>
+</div>
+<div class="race-label-box">
+  <p class="label">Race</p>
 <select  class="race-select"></select>
+</div>
+<div class="class-label-box">
+<p class="label">Class</p>
 <select class="class-select"></select>
+</div>
+<div class="level-label-box">
+<p class="label">Level</p>
   <select class = "dropdown">
      <option value = "1">1</option>
      <option value = "2">2</option>
@@ -186,6 +198,7 @@
   </select>
 </div>
 </div>
+</div>
 <div class="characterbox-basic-info">
 <p class="label" >Basic information</p>
 <span class="characterbox-writing-section"   role="textbox" contenteditable="true"></span>
@@ -194,10 +207,10 @@
 <button class="deletebutton" >Delete character</button>
 </div>
 </div>
-<div class="button-box">
-<button class="addbutton">Add another character</button> 
 </div>
-
+<div class="button-box">
+  <button class="addbutton">Add another character</button> 
+  </div>
 </div>
 
 

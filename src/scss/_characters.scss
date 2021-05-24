@@ -19,15 +19,8 @@
   font-size: 1.4rem;
   font-family: var(--sub-font);
 }
-
-.characterbox-writing-section:focus,
-.characterbox-name:focus {
-  border: 0.1rem solid var(--gray-color);
-}
-
-.characterbox-writing-section:before,
-.characterbox-name:before {
-  color: var(--lightgray-color);
+.characterbox-writing-section {
+  display: block;
 }
 
 .characterbox-name:empty::before {
@@ -38,9 +31,6 @@
   content: "Write about your character! It's a good idea to think of what kind of environment they grew up in, the factors that shaped their motivation and personality, and other plot-rich factors.";
 }
 
-.race-class:focus {
-  border: 0.1rem solid var(--gray-color);
-}
 .race-class:empty::before {
   content: "";
   color: var(--lightgray-color);
@@ -48,7 +38,6 @@
 .race-class:empty:focus::before {
   content: "";
 }
-
 .race-select,
 .class-select,
 .dropdown {
@@ -59,13 +48,10 @@
 .name-and-selects,
 .character-labels {
   display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-  justify-content: left;
 }
 .character-input {
   min-height: 2rem;
-  width: 25%;
+  min-width: 20rem;
 }
 .name-and-selects {
   margin-bottom: 2rem;
@@ -75,9 +61,6 @@
 .dropdown,
 .character-input {
   margin-right: 7rem;
-}
-.label {
-  width: 22%;
 }
 //css for add button, doesn't matter as there is no add button rn
 .button-box {
@@ -98,4 +81,13 @@
 
 .deletebutton:hover {
   box-shadow: 0 0.5rem 1rem rgba(255, 106, 113, 0.7);
+}
+
+//to make line up
+.name-label-box,
+.race-label-box,
+.class-label-box,
+.level-label-box {
+  display: flex;
+  flex-direction: column;
 }

@@ -1,7 +1,8 @@
 .settingbox-cards {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: center;
+  gap: 1rem;
 }
 
 .subheading {
@@ -36,7 +37,7 @@
 }
 
 .settingbox-card-information {
-  font: 1.3rem var(--sub-font);
+  font: 1.2rem var(--sub-font);
   letter-spacing: 0.1rem;
   font-weight: 900;
   display: none;
@@ -51,27 +52,9 @@
 
 .settingbox-card-add {
   display: none;
-  height: 3.5rem;
-  line-height: 3.5rem;
-  padding: 0 2.5rem;
-  border: none;
-  border-radius: 0.5rem;
-  margin-top: 1rem;
-  transition: all 0.3s;
-  font: 800 1.2rem var(--sub-font);
-  background-color: var(--yellow-color);
+  margin-bottom: 1rem;
 }
 
-.settingbox-card-add:hover {
-  box-shadow: 0 0.5rem 1rem rgba(255, 236, 151, 0.7);
-  transform: translateY(-0.5rem);
-  z-index: 1;
-}
-
-.settingbox-card:hover {
-  transform: translateY(-0.5rem);
-  z-index: 1;
-}
 .settingbox-card:hover .settingbox-card-heading,
 .settingbox-card:hover .settingbox-card-information,
 .settingbox-card:hover .settingbox-card-add {
@@ -85,18 +68,10 @@
   text-align: center;
   font: 4rem var(--main-font);
 }
-
 .settingbox-enter-your-own {
   margin-top: 2rem;
 }
-.settingbox-setting-input,
-.settingbox-writing-section {
-  border: 0.1rem solid var(--lightgray-color);
-  background-color: var(--white-color);
-  padding: 1rem;
-  font-size: 1.4rem;
-  font-family: var(--sub-font);
-}
+
 .settingbox-setting-input {
   min-height: 4rem;
   width: 30rem;
@@ -107,21 +82,9 @@
   min-height: 20rem;
   display: block;
 }
-.settingbox-writing-section:focus,
-.settingbox-setting-input:focus {
-  border: 0.1rem solid var(--gray-color);
-}
-.settingbox-writing-section:before,
-.settingbox-setting-input:before {
-  color: var(--lightgray-color);
-}
 .settingbox-setting-input:empty::before {
   content: "Choose a setting for your story";
 }
 .settingbox-writing-section:empty::before {
   content: "Write about your setting! It's a good idea to think of what kind of culture the people there would have, how they'd react to outsiders, and other plot-rich factors.";
-}
-.settingbox-writing-section:empty:focus::before,
-.settingbox-setting-input:empty:focus::before {
-  content: "";
 }

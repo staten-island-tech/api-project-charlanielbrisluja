@@ -3,8 +3,9 @@
   margin-bottom: 2rem;
   margin-top: 2rem;
 }
-.searchbox, .search-form {
-display: flex;
+.searchbox,
+.search-form {
+  display: flex;
   justify-content: center;
   align-items: center;
 }
@@ -21,7 +22,8 @@ display: flex;
   border-bottom-left-radius: 0;
   background-color: var(--yellow-color);
 }
-.monster-search, .searchbtn {
+.monster-search,
+.searchbtn {
   border: 0.1rem solid var(--black-color);
   height: 4rem;
 }
@@ -38,12 +40,13 @@ display: flex;
   font: 1.4rem var(--sub-font);
   background-color: var(--orange-color);
   margin-right: 2rem;
-  border: .001rem solid var(--gray-color);
+  border: 0.001rem solid var(--gray-color);
 }
 .search-reset:hover {
   background-color: var(--darkorange-color);
 }
-.card-box, .selected-box {
+.card-box,
+.selected-box {
   padding: 3rem 0;
   max-height: 35rem;
   width: 100%;
@@ -86,7 +89,8 @@ display: flex;
 .addbtn,
 .learnbtn,
 .addbutton,
-.deletebutton {
+.deletebutton,
+.settingbox-card-add {
   height: 3.5rem;
   line-height: 3.5rem;
   padding: 0 2.5rem;
@@ -94,7 +98,9 @@ display: flex;
   transition: all 0.3s;
   font: 800 1.2rem var(--sub-font);
 }
-.addbtn, .addbutton {
+.addbtn,
+.addbutton,
+.settingbox-card-add {
   margin-top: 1.5rem;
   background-color: var(--yellow-color);
 }
@@ -105,7 +111,8 @@ display: flex;
   margin-top: 0.5rem;
   background-color: var(--white-color);
 }
-.addbtn:hover {
+.addbtn:hover,
+.settingbox-card-add:hover {
   box-shadow: 0 0.5rem 1rem rgba(255, 236, 151, 0.7);
 }
 .learnbtn:hover {
@@ -114,7 +121,9 @@ display: flex;
 .addbtn:hover,
 .learnbtn:hover,
 .addbutton:hover,
-.deletebutton:hover {
+.deletebutton:hover,
+.settingbox-card:hover,
+.settingbox-card-add:hover {
   transform: translateY(-0.3rem);
   z-index: 1;
 }
@@ -132,12 +141,13 @@ display: flex;
   padding: 2rem;
   background-color: var(--yellow-color);
 }
-.popup-stats, .popup-abilities {
+.popup-stats,
+.popup-abilities {
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
   font-size: 2rem;
-  gap: .75rem;
+  gap: 0.75rem;
 }
 .monster-description {
   font-size: 1.3rem;
@@ -153,47 +163,48 @@ display: flex;
   margin-bottom: 2rem;
 }
 .fa-dragon {
-    font-size: 10rem;
-    opacity: .3;
-    background-color: var(--white-color);
-    padding: 3rem;
-    text-align: center;
-    width: 20rem;
+  font-size: 10rem;
+  opacity: 0.3;
+  background-color: var(--white-color);
+  padding: 3rem;
+  text-align: center;
+  width: 20rem;
 }
 .fa-dragon::after {
-    margin-top: 2rem;
-    display: block;
-    content: "You have no monsters selected. Add them above!";
-    font: 900 1.3rem var(--sub-font);
-    height: 4rem;
+  margin-top: 2rem;
+  display: block;
+  content: "You have no monsters selected. Add them above!";
+  font: 900 1.3rem var(--sub-font);
+  height: 4rem;
 }
 .monster-popup {
   position: fixed;
-    z-index: 1;
-    top: 15%;
-    left: 25%;
-    width: 50%;
-    min-height: 50%;
-    background-color: var(--white-color);
-    box-shadow: 0 2rem 3rem rgba(255, 255, 255, 0.4);
+  z-index: 1;
+  top: 15%;
+  left: 25%;
+  width: 50%;
+  min-height: 50%;
+  background-color: var(--white-color);
+  box-shadow: 0 2rem 3rem rgba(255, 255, 255, 0.4);
 }
-.popup-stats, .popup-abilities {
-    padding: 3rem;
+.popup-stats,
+.popup-abilities {
+  padding: 3rem;
 }
 .monster-popup h2 {
-    padding-left: 3rem;
+  padding-left: 3rem;
 }
 .monster-popup h3 {
-    font: 700 1.5rem var(--sub-font);
-    line-height: 200%;
+  font: 700 1.5rem var(--sub-font);
+  line-height: 200%;
 }
 .fa-times {
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 1.75rem 2rem;
-    font-size: 3rem;
-    font-weight: 100;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1.75rem 2rem;
+  font-size: 3rem;
+  font-weight: 100;
 }
 .fa-times:hover {
   color: var(--white-color);

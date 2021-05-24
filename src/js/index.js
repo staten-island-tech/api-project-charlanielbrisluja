@@ -202,10 +202,10 @@ closePopup();
 
 const deleteMonster = function () {
   DOMSelectors.selectedBox.addEventListener("click", function (e) {
-  if (e.target.innerHTML === "Delete monster") {
-    e.target.parentElement.outerHTML = "";
-  }
-});
+    if (e.target.innerHTML === "Delete monster") {
+      e.target.parentElement.outerHTML = "";
+    }
+  });
 };
 deleteMonster();
 
@@ -222,19 +222,19 @@ DOMSelectors.settingCards.addEventListener("click", function (e) {
 
 //characterbox add/delete characters js
 
-DOMSelectors.characterButton.addEventListener("click", function () {
-  const character = DOMSelectors.characterBox.children[1];
+DOMSelectors.characterButton.addEventListener("click", function (e) {
+  const character = DOMSelectors.character;
   const characterClone = character.cloneNode(true);
-  DOMSelectors.characterBox.append(characterClone);
-  console.log(characterClone.className);
+  DOMSelectors.characterAndAdd.append(characterClone);
+  console.log(DOMSelectors.characterBox.children[2]);
 });
 DOMSelectors.characterBox.addEventListener("click", function (e) {
   if (e.target.innerHTML === "Delete character") {
-    if (DOMSelectors.characterBox.children.length === 3) {
-      alert("i hate you please die"); //perfect
-    } else {
-      e.target.parentElement.parentElement.outerHTML = "";
-    }
+    // if (DOMSelectors.characterBox.children.length === 2) {
+    //   alert("You need at least one character, please don't delete."); //perfect
+    // } else {
+    e.target.parentElement.parentElement.outerHTML = "";
+    //}
   }
 });
 
@@ -301,7 +301,7 @@ const race = function () {
       });
     } catch (error) {
       console.log(error);
-      alert("Get wrecked loser");
+      alert("Something went wrong! Please try again later.");
     }
   };
   raceInsert();
@@ -321,7 +321,7 @@ const characterClass = function () {
       });
     } catch (error) {
       console.log(error);
-      alert("Get wrecked loser");
+      alert("Something went wrong! Please try again later.");
     }
   };
   classInsert();
