@@ -385,15 +385,19 @@
   content: "Write about your setting! It's a good idea to think of what kind of culture the people there would have, how they'd react to outsiders, and other plot-rich factors.";
 }
 
-@media only screen and (max-width: 780px) {
+@media only screen and (max-width: 670px) {
+  .settingbox-cards {
+    overflow-y: hidden;
+  }
   .settingbox-card {
-    width: 30%;
+    width: 30rem;
+    height: 30rem;
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
   }
-  .settingbox-card-heading {
-    font-size: 1.3rem;
-  }
-  .settingbox-card-information {
-    font-size: 0.8rem;
+  .settingbox-card-image {
+    height: 100%;
+    width: 100%;
   }
 }
 
