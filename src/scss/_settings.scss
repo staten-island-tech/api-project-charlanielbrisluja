@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  gap: 1rem;
 }
 
 .subheading {
@@ -15,10 +14,11 @@
 
 .settingbox-card {
   height: 23rem;
-  width: 15%;
+  width: 30rem;
   border: 0.01rem solid #000;
   border-radius: 1rem;
   margin-top: 3rem;
+  margin-left: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -45,7 +45,7 @@
 
 .settingbox-card-image {
   border-radius: 1rem;
-  min-height: 23rem;
+  height: 100%;
   width: 100%;
   border: 0.01rem solid #000;
 }
@@ -93,14 +93,9 @@
 @media only screen and (max-width: 670px) {
   .settingbox-cards {
     overflow-y: hidden;
+    display: flex;
   }
   .settingbox-card {
-    width: 30rem;
-    height: 30rem;
     flex-shrink: 0;
-  }
-  .settingbox-card-image {
-    height: 100%;
-    width: 100%;
   }
 }

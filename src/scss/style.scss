@@ -181,7 +181,8 @@ h1 {
 .textinput:empty:focus::before,
 .textarea:empty:focus::before,
 .settingbox-writing-section:empty:focus::before,
-.settingbox-setting-input:empty:focus::before {
+.settingbox-setting-input:empty:focus::before,
+.characterbox-writing-section:empty:focus::before {
   content: "";
 }
 .morebtn-box {

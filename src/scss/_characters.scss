@@ -23,7 +23,7 @@
   display: block;
 }
 
-.characterbox-name:empty::before {
+.character-input:empty::before {
   content: "Write your NPC's name or title!";
 }
 
@@ -85,7 +85,6 @@
   box-shadow: 0 0.5rem 1rem rgba(255, 106, 113, 0.7);
 }
 
-//to make line up
 .name-label-box,
 .race-label-box,
 .class-label-box,
