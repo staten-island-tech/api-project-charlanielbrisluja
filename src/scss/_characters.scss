@@ -55,6 +55,8 @@
 }
 .name-and-selects {
   margin-bottom: 2rem;
+  display: flex;
+  flex-wrap: wrap;
 }
 .race-select,
 .class-select,
@@ -90,5 +92,4 @@
 .level-label-box {
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
 }
