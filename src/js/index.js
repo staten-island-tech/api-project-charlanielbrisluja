@@ -43,26 +43,31 @@ const query = async function () {
   } catch (error) {
     console.log(error);
     alert(
-      `The selection of "Monsters" is currently not working. Please try again later.`
+      `The monster selection is currently not working. Please try again later.`
     );
   }
 };
 query();
 
 DOMSelectors.resetButton.addEventListener("click", function () {
+  //erases searched monster
   DOMSelectors.cardBox.firstChild.outerHTML = "";
+  //resets monster selection
   query();
+  //resets search field
   DOMSelectors.searchBox.value = "";
 });
 
+//Capitalizes strings
 String.prototype.capitalize = function () {
   return this.charAt(0).toUpperCase() + this.slice(1);
 };
-
+    
 const search = function () {
   DOMSelectors.searchForm.addEventListener("submit", function (e) {
     e.preventDefault();
     DOMSelectors.cardBox.innerHTML = "";
+    //Replaces periods with spaces, then trims spaces at ends, then replaces spaces with dashes, then makes it lowercase
     const searchWords = DOMSelectors.searchBox.value
       .replace(".", "")
       .trim()

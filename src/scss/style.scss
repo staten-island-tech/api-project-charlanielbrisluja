@@ -216,7 +216,7 @@ h1 {
 @media only screen and (max-width: 768px) {
   html,
   body * {
-    font-size: 35%;
+    font-size: 20%;
   }
   .container {
     width: 100%;
@@ -228,7 +228,7 @@ h1 {
     top: 2.55rem;
   }
   h1 {
-    font-size: 4rem;
+    font-size: 8rem;
   }
   nav {
     min-width: 60%;
@@ -238,7 +238,7 @@ h1 {
     display: none;
   }
   nav i {
-    padding: 0 3rem;
+    padding: 0 10rem;
     font-size: 4rem;
   }
 }
