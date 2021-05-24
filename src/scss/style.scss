@@ -133,6 +133,7 @@ h1 {
   color: var(--black-color);
   margin-bottom: 0.5rem;
 }
+//all form stuff follows
 .textinput,
 .label,
 .textarea {
@@ -157,20 +158,11 @@ h1 {
   min-height: 50rem;
 }
 .textinput:focus,
-.textarea:focus,
-.settingbox-writing-section:focus,
-.settingbox-setting-input:focus,
-.characterbox-writing-section:focus,
-.characterbox-name:focus,
-.race-class:focus {
+.textarea:focus {
   border: 0.1rem solid var(--gray-color);
 }
 .textinput:empty::before,
-.textarea:empty::before,
-.settingbox-writing-section:before,
-.settingbox-setting-input:before,
-.characterbox-writing-section:before,
-.characterbox-name:before {
+.textarea:empty::before {
   color: var(--lightgray-color);
 }
 .textinput:empty::before {
@@ -180,12 +172,38 @@ h1 {
   content: "Write your one-shot story (Pro tip: Remember to think of all the ways that players may act in the game!)";
 }
 .textinput:empty:focus::before,
-.textarea:empty:focus::before,
-.settingbox-writing-section:empty:focus::before,
-.settingbox-setting-input:empty:focus::before,
-.characterbox-writing-section:empty:focus::before {
+.textarea:empty:focus::before {
   content: "";
 }
+.characterbox-writing-section {
+  display: block;
+  min-height: 15rem;
+}
+
+.character-input:empty::before {
+  content: "Write your NPC's name or title!";
+}
+
+.characterbox-writing-section:empty::before {
+  content: "Write about your character! It's a good idea to think of what kind of environment they grew up in, the factors that shaped their motivation and personality, and other plot-rich factors.";
+}
+.settingbox-setting-input {
+  min-height: 4rem;
+  width: 30rem;
+  margin-bottom: 2rem;
+  display: block;
+}
+.settingbox-writing-section {
+  min-height: 20rem;
+  display: block;
+}
+.settingbox-setting-input:empty::before {
+  content: "Choose a setting for your story";
+}
+.settingbox-writing-section:empty::before {
+  content: "Write about your setting! It's a good idea to think of what kind of culture the people there would have, how they'd react to outsiders, and other plot-rich factors.";
+}
+//end of form stuff
 .morebtn-box {
   width: 100%;
   display: flex;

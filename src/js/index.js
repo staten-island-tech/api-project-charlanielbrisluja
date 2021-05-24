@@ -62,7 +62,7 @@ DOMSelectors.resetButton.addEventListener("click", function () {
 String.prototype.capitalize = function () {
   return this.charAt(0).toUpperCase() + this.slice(1);
 };
-    
+
 const search = function () {
   DOMSelectors.searchForm.addEventListener("submit", function (e) {
     e.preventDefault();
@@ -231,22 +231,30 @@ DOMSelectors.characterButton.addEventListener("click", function (e) {
   const character = DOMSelectors.character;
   const characterClone = character.cloneNode(true);
   DOMSelectors.characterAndAdd.append(characterClone);
+  if (
+    e.target.innerHTML === "Add another character" &&
+    DOMSelectors.character.children.length > 3
+  ) {
+    DOMSelectors.iconBox.innerHTML = "";
+  }
 });
 DOMSelectors.characterBox.addEventListener("click", function (e) {
   if (e.target.innerHTML === "Delete character") {
     e.target.parentElement.parentElement.outerHTML = "";
   }
-  if ((DOMSelectors.characterBox.innerHTML = "")) {
-    DOMSelectors.characterAndAdd.insertAdjacentHTML(
+  if (
+    e.target.innerHTML === "Delete character" &&
+    DOMSelectors.character.children.length <= 3
+  ) {
+    DOMSelectors.iconBox.insertAdjacentHTML(
       "beforeend",
-      `<div class="selected-box">
-      <i class="fas fa-helmet-battle"></i>
-  </div>`
+      `<div class="selected-box-two">
+    <i class="fas fa-helmet-battle"></i> 
+ </div> `
     );
   }
-  console.log(DOMSelectors.characterBox.innerHTML);
+  console.log(DOMSelectors.character.children.length);
 });
-
 //api stuff for race and class
 const race = function () {
   const raceInsert = async function () {

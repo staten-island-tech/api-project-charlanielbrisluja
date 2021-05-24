@@ -19,5 +19,7 @@ const DOMSelectors = {
   characterButton: document.querySelector(".addbutton"),
   deleteButton: document.querySelector(".deletebutton"),
   characterAndAdd: document.querySelector(".character-and-add"),
+  iconBox: document.querySelector(".icon-box"),
+  icon: document.querySelector(".selected-box-two"),
 };
 export { DOMSelectors };

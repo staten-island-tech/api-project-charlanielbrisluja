@@ -8,7 +8,7 @@
   text-align: center;
   padding: 0 20%;
   color: var(--white-color);
-  margin-top: 1.5rem;
+  margin-top: 3rem;
 }
 
 .settingbox-card {
@@ -69,23 +69,6 @@
 }
 .settingbox-enter-your-own {
   margin-top: 2rem;
-}
-
-.settingbox-setting-input {
-  min-height: 4rem;
-  width: 30rem;
-  margin-bottom: 2rem;
-  display: block;
-}
-.settingbox-writing-section {
-  min-height: 20rem;
-  display: block;
-}
-.settingbox-setting-input:empty::before {
-  content: "Choose a setting for your story";
-}
-.settingbox-writing-section:empty::before {
-  content: "Write about your setting! It's a good idea to think of what kind of culture the people there would have, how they'd react to outsiders, and other plot-rich factors.";
 }
 
 .settingbox-cards {

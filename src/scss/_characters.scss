@@ -19,25 +19,7 @@
   font-size: 1.4rem;
   font-family: var(--sub-font);
 }
-.characterbox-writing-section {
-  display: block;
-}
 
-.character-input:empty::before {
-  content: "Write your NPC's name or title!";
-}
-
-.characterbox-writing-section:empty::before {
-  content: "Write about your character! It's a good idea to think of what kind of environment they grew up in, the factors that shaped their motivation and personality, and other plot-rich factors.";
-}
-
-.race-class:empty::before {
-  content: "";
-  color: var(--lightgray-color);
-}
-.race-class:empty:focus::before {
-  content: "";
-}
 .race-select,
 .class-select,
 .dropdown {
