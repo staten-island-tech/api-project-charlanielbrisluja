@@ -12,19 +12,18 @@
 }
 
 .settingbox-card {
-  height: 30rem;
-  width: 30rem;
-  border: 0.01rem solid #000;
-  border-radius: 1rem;
+  height: 25rem;
+  width: 20rem;
   margin-top: 3rem;
   margin-left: 1rem;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;
   transition: all 0.3s;
   background: #9faeff;
+  border: 0.01rem solid var(--black-color);
 }
 
 .settingbox-card-heading {
@@ -33,6 +32,7 @@
   font-weight: 900;
   margin-bottom: 1rem;
   display: none;
+  text-align: center;
 }
 
 .settingbox-card-information {
@@ -40,13 +40,13 @@
   letter-spacing: 0.1rem;
   font-weight: 900;
   display: none;
+  text-align: left;
 }
 
 .settingbox-card-image {
-  border-radius: 1rem;
-  height: 100%;
-  width: 100%;
-  border: 0.01rem solid #000;
+  height: 25rem;
+  width: 20rem;
+  border: 0.01rem solid var(--black-color);
 }
 
 .settingbox-card-add {
