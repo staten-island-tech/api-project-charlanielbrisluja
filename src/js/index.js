@@ -222,38 +222,16 @@ DOMSelectors.settingCards.addEventListener("click", function (e) {
   }
   console.log(e.target.parentElement.firstChild.nextElementSibling.innerHTML);
 });
-// const settingHeader = DOMSelectors.settingHeader;
-// console.log(settingHeader[3].textContent);
-
 //characterbox add/delete characters js
-
 DOMSelectors.characterButton.addEventListener("click", function (e) {
   const character = DOMSelectors.character;
   const characterClone = character.cloneNode(true);
   DOMSelectors.characterAndAdd.append(characterClone);
-  if (
-    e.target.innerHTML === "Add another character" &&
-    DOMSelectors.character.children.length > 3
-  ) {
-    DOMSelectors.iconBox.innerHTML = "";
-  }
 });
 DOMSelectors.characterBox.addEventListener("click", function (e) {
   if (e.target.innerHTML === "Delete character") {
     e.target.parentElement.parentElement.outerHTML = "";
   }
-  if (
-    e.target.innerHTML === "Delete character" &&
-    DOMSelectors.character.children.length <= 3
-  ) {
-    DOMSelectors.iconBox.insertAdjacentHTML(
-      "beforeend",
-      `<div class="selected-box-two">
-    <i class="fas fa-helmet-battle"></i> 
- </div> `
-    );
-  }
-  console.log(DOMSelectors.character.children.length);
 });
 //api stuff for race and class
 const race = function () {
