@@ -216,7 +216,8 @@
   margin-bottom: 2rem;
 }
 
-.fa-dragon {
+.fa-dragon,
+.fa-helmet-battle {
   font-size: 10rem;
   opacity: 0.3;
   background-color: var(--white-color);
@@ -225,12 +226,17 @@
   width: 20rem;
 }
 
-.fa-dragon::after {
+.fa-dragon::after,
+.fa-helmet-battle::after {
   margin-top: 2rem;
   display: block;
   content: "You have no monsters selected. Add them above!";
   font: 900 1.3rem var(--sub-font);
   height: 4rem;
+}
+
+.fa-helmet-battle::after {
+  content: "You have no characters written. Add them below!";
 }
 
 .monster-popup {
@@ -280,9 +286,6 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
 }
 
 .subheading {
@@ -294,7 +297,7 @@
 }
 
 .settingbox-card {
-  height: 23rem;
+  height: 30rem;
   width: 30rem;
   border: 0.01rem solid #000;
   border-radius: 1rem;
@@ -385,17 +388,16 @@
   content: "Write about your setting! It's a good idea to think of what kind of culture the people there would have, how they'd react to outsiders, and other plot-rich factors.";
 }
 
-@media only screen and (max-width: 670px) {
-  .settingbox-cards {
-    overflow-y: hidden;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
-  .settingbox-card {
-    -ms-flex-negative: 0;
-        flex-shrink: 0;
-  }
+.settingbox-cards {
+  overflow-y: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.settingbox-card {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
 }
 
 .character {

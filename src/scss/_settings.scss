@@ -1,7 +1,6 @@
 .settingbox-cards {
   display: flex;
   flex-direction: row;
-  justify-content: center;
 }
 
 .subheading {
@@ -13,7 +12,7 @@
 }
 
 .settingbox-card {
-  height: 23rem;
+  height: 30rem;
   width: 30rem;
   border: 0.01rem solid #000;
   border-radius: 1rem;
@@ -89,13 +88,10 @@
   content: "Write about your setting! It's a good idea to think of what kind of culture the people there would have, how they'd react to outsiders, and other plot-rich factors.";
 }
 
-//media query (singular)
-@media only screen and (max-width: 670px) {
-  .settingbox-cards {
-    overflow-y: hidden;
-    display: flex;
-  }
-  .settingbox-card {
-    flex-shrink: 0;
-  }
+.settingbox-cards {
+  overflow-y: hidden;
+  display: flex;
+}
+.settingbox-card {
+  flex-shrink: 0;
 }
