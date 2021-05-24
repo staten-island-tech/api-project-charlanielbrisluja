@@ -231,7 +231,7 @@ DOMSelectors.characterBox.addEventListener("click", function (e) {
   if (e.target.innerHTML === "Delete character") {
     e.target.parentElement.parentElement.outerHTML = "";
   }
-  if (DOMSelectors.characterBox.children.length === 3) {
+  if ((DOMSelectors.characterBox.innerHTML = "")) {
     DOMSelectors.characterAndAdd.insertAdjacentHTML(
       "beforeend",
       `<div class="selected-box">
@@ -239,6 +239,7 @@ DOMSelectors.characterBox.addEventListener("click", function (e) {
   </div>`
     );
   }
+  console.log(DOMSelectors.characterBox.innerHTML);
 });
 
 //api stuff for race and class

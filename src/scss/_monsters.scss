@@ -46,7 +46,8 @@
   background-color: var(--darkorange-color);
 }
 .card-box,
-.selected-box {
+.selected-box,
+.selected-box-two {
   padding: 3rem 0;
   max-height: 35rem;
   width: 100%;
@@ -154,7 +155,8 @@
   font-weight: 700;
   line-height: 150%;
 }
-.selected-box {
+.selected-box,
+.selected-box-two {
   margin-top: 2rem;
   gap: 1rem;
 }
