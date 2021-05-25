@@ -242,7 +242,7 @@ const race = function () {
       raceData.results.forEach((race) => {
         DOMSelectors.raceSelect.insertAdjacentHTML(
           "beforeend",
-          `<option value="">${race.name}</option>`
+          `<option class="option" value="race">${race.name}</option>`
         );
       });
     } catch (error) {
@@ -254,6 +254,16 @@ const race = function () {
 };
 race();
 
+const moreRace = function () {
+  const moreRaceInsert = async function () {
+    try {
+      const response = await fetch(``);
+      const moreRaceData = await response.json();
+    } catch (error) {}
+  };
+  moreRaceInsert();
+};
+moreRace();
 const characterClass = function () {
   const classInsert = async function () {
     try {
@@ -262,7 +272,7 @@ const characterClass = function () {
       classData.results.forEach((classOption) => {
         DOMSelectors.classSelect.insertAdjacentHTML(
           "beforeend",
-          `<option value="">${classOption.name}</option>`
+          `<option value="class">${classOption.name}</option>`
         );
       });
     } catch (error) {
