@@ -226,6 +226,8 @@
   }
   .monster-popup {
     width: 90%;
+    left: 5%;
+    z-index: 3;
   }
   .card-box {
     grid-template-columns: 1fr 1fr;
