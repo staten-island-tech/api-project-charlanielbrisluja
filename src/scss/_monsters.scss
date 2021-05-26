@@ -61,8 +61,8 @@
 }
 .monster-card {
   height: 27rem;
-  max-width: 20rem;
-  min-width: 15rem;
+  max-width: 25rem;
+  min-width: 20rem;
   padding: 1rem;
   border: 0.01rem solid #000;
   background: var(--beige-color);
@@ -220,12 +220,11 @@
 .fa-times:hover {
   color: var(--white-color);
 }
-
+@media only screen and (max-width: 1200px) {
+  .monster-card {
+    font-size: 50%;
+  }
+ }
 @media only screen and (max-width: 768px) {
-.searchbox {
-  width: 90%;
-}
-.search-form {
-  width: 90%;
-}
+
 }

@@ -223,25 +223,21 @@ h1 {
     font-size: 50%;
   }
   h1 {
-    font-size: 3rem;
+    font-size: 5rem;
   }
 }
 @media only screen and (max-width: 768px) {
   html,
   body * {
-    font-size: 20%;
+    font-size: 50%;
+  }
+  h1 {
+    font-size: 5rem;
   }
   .container {
     width: 100%;
     margin: 0;
-    margin-bottom: 1rem;
-    border: none;
-  }
-  .dice-number {
-    top: 2.55rem;
-  }
-  h1 {
-    font-size: 10rem;
+    border-radius: 0;
   }
   nav {
     min-width: 60%;
