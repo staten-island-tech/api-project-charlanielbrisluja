@@ -222,38 +222,16 @@ DOMSelectors.settingCards.addEventListener("click", function (e) {
   }
   console.log(e.target.parentElement.firstChild.nextElementSibling.innerHTML);
 });
-// const settingHeader = DOMSelectors.settingHeader;
-// console.log(settingHeader[3].textContent);
-
 //characterbox add/delete characters js
-
 DOMSelectors.characterButton.addEventListener("click", function (e) {
   const character = DOMSelectors.character;
   const characterClone = character.cloneNode(true);
   DOMSelectors.characterAndAdd.append(characterClone);
-  if (
-    e.target.innerHTML === "Add another character" &&
-    DOMSelectors.character.children.length > 3
-  ) {
-    DOMSelectors.iconBox.innerHTML = "";
-  }
 });
 DOMSelectors.characterBox.addEventListener("click", function (e) {
   if (e.target.innerHTML === "Delete character") {
     e.target.parentElement.parentElement.outerHTML = "";
   }
-  if (
-    e.target.innerHTML === "Delete character" &&
-    DOMSelectors.character.children.length <= 3
-  ) {
-    DOMSelectors.iconBox.insertAdjacentHTML(
-      "beforeend",
-      `<div class="selected-box-two">
-    <i class="fas fa-helmet-battle"></i> 
- </div> `
-    );
-  }
-  console.log(DOMSelectors.character.children.length);
 });
 //api stuff for race and class
 const race = function () {
@@ -264,7 +242,7 @@ const race = function () {
       raceData.results.forEach((race) => {
         DOMSelectors.raceSelect.insertAdjacentHTML(
           "beforeend",
-          `<option value="">${race.name}</option>`
+          `<option class="option" value="race">${race.name}</option>`
         );
       });
     } catch (error) {
@@ -276,6 +254,16 @@ const race = function () {
 };
 race();
 
+const moreRace = function () {
+  const moreRaceInsert = async function () {
+    try {
+      const response = await fetch(``);
+      const moreRaceData = await response.json();
+    } catch (error) {}
+  };
+  moreRaceInsert();
+};
+moreRace();
 const characterClass = function () {
   const classInsert = async function () {
     try {
@@ -284,7 +272,7 @@ const characterClass = function () {
       classData.results.forEach((classOption) => {
         DOMSelectors.classSelect.insertAdjacentHTML(
           "beforeend",
-          `<option value="">${classOption.name}</option>`
+          `<option value="class">${classOption.name}</option>`
         );
       });
     } catch (error) {
