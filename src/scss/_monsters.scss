@@ -167,8 +167,7 @@
   width: 100%;
   margin-bottom: 2rem;
 }
-.fa-dragon,
-.fa-helmet-battle {
+.fa-dragon {
   font-size: 10rem;
   opacity: 0.3;
   background-color: var(--white-color);
@@ -176,16 +175,12 @@
   text-align: center;
   width: 20rem;
 }
-.fa-dragon::after,
-.fa-helmet-battle::after {
+.fa-dragon::after {
   margin-top: 2rem;
   display: block;
   content: "You have no monsters selected. Add them above!";
   font: 900 1.3rem var(--sub-font);
   height: 4rem;
-}
-.fa-helmet-battle::after {
-  content: "You have no characters written. Add them below!";
 }
 .monster-popup {
   position: fixed;
@@ -226,5 +221,13 @@
   }
  }
 @media only screen and (max-width: 768px) {
-
+  .monster-search {
+    width: 20rem;
+  }
+  .monster-popup {
+    width: 90%;
+  }
+  .card-box {
+    grid-template-columns: 1fr 1fr;
+  }
 }
