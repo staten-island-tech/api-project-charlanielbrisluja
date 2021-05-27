@@ -14,7 +14,6 @@ const DOMSelectors = {
   closeIcon: document.querySelector(".fa-times"),
   characterBox: document.querySelector("#characterbox"),
   character: document.querySelector(".character"),
-  levelSelect: document.querySelector(".level-select"),
   raceSelect: document.querySelector(".race-select"),
   classSelect: document.querySelector(".class-select"),
   characterButton: document.querySelector(".addbutton"),

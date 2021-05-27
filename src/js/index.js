@@ -222,16 +222,6 @@ DOMSelectors.settingCards.addEventListener("click", function (e) {
   }
   console.log(e.target.parentElement.firstChild.nextElementSibling.innerHTML);
 });
-//character level
-const characterLevel = [
-  1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
-];
-characterLevel.forEach((option) => {
-  DOMSelectors.levelSelect.insertAdjacentHTML(
-    "beforeend",
-    `<option value="level">${characterLevel}</option>`
-  );
-});
 //characterbox add/delete characters js
 DOMSelectors.characterButton.addEventListener("click", function (e) {
   const character = DOMSelectors.character;
@@ -252,7 +242,7 @@ const race = function () {
       raceData.results.forEach((race) => {
         DOMSelectors.raceSelect.insertAdjacentHTML(
           "beforeend",
-          `<option value="race">${race.name}</option>`
+          `<option class="option" value="race">${race.name}</option>`
         );
       });
     } catch (error) {
