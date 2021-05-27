@@ -16,6 +16,8 @@ const DOMSelectors = {
   character: document.querySelector(".character"),
   raceSelect: document.querySelector(".race-select"),
   classSelect: document.querySelector(".class-select"),
+  levelSelect: document.querySelector(".level-select"),
+  classBox: document.querySelector(".class-box"),
   characterButton: document.querySelector(".addbutton"),
   deleteButton: document.querySelector(".deletebutton"),
   characterAndAdd: document.querySelector(".character-and-add"),

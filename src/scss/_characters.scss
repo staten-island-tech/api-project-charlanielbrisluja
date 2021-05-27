@@ -10,7 +10,7 @@
 .character-input,
 .race-select,
 .class-select,
-.dropdown {
+.level-select {
   min-height: 9.5rem;
   display: inline-block;
   border: 0.1rem solid var(--lightgray-color);
@@ -22,7 +22,7 @@
 
 .race-select,
 .class-select,
-.dropdown {
+.level-select {
   min-height: 2rem;
   min-width: 7rem;
 }
@@ -42,7 +42,7 @@
 }
 .race-select,
 .class-select,
-.dropdown,
+.level-select,
 .character-input {
   margin-right: 7rem;
 }
