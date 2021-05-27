@@ -250,9 +250,16 @@ DOMSelectors.settingCards.addEventListener("click", function (e) {
   }
   console.log(e.target.parentElement.firstChild.nextElementSibling.innerHTML);
 });
-// const settingHeader = DOMSelectors.settingHeader;
-// console.log(settingHeader[3].textContent);
-
+//character level insert
+const levelArray = [
+  1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
+];
+levelArray.forEach((level) => {
+  DOMSelectors.levelSelect.insertAdjacentHTML(
+    "beforeend",
+    `<option value="">${level}</option>`
+  );
+});
 //characterbox add/delete characters js
 
 DOMSelectors.characterButton.addEventListener("click", function () {
