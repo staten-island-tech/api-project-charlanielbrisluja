@@ -1,7 +1,6 @@
 .character {
   border: black solid 0.1rem;
   padding: 2rem;
-  margin-top: 2rem;
   background: var(--lightorange-color);
 }
 .characterbox-writing-section,
@@ -32,6 +31,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
+  margin-top: 2rem;
 }
 .character-input {
   min-height: 2rem;
