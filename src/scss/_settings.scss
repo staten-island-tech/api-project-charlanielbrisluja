@@ -7,8 +7,8 @@
   font: 1.6rem var(--sub-font);
   text-align: center;
   padding: 0 20%;
-  color: var(--white-color);
-  margin-top: 3rem;
+  color: var(--yellow-color);
+  margin-top: 1rem;
 }
 
 .settingbox-card {
@@ -77,4 +77,10 @@
 }
 .settingbox-card {
   flex-shrink: 0;
+}
+
+@media only screen and (max-width: 768px) {
+ .subheading {
+   padding: 0 10%;
+ }
 }

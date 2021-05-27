@@ -14,6 +14,7 @@ window.addEventListener("beforeunload", function (e) {
 
 // Story section
 DOMSelectors.moreButton.addEventListener("click", function () {
+  //expands or contracts textarea on click
   if (DOMSelectors.moreButton.innerHTML === "More space") {
     DOMSelectors.storyArea.style.minHeight = "100rem";
     DOMSelectors.moreButton.innerHTML = "Less space";
@@ -26,6 +27,7 @@ DOMSelectors.moreButton.addEventListener("click", function () {
 // Monsters section
 const query = async function () {
   try {
+    //fetches monster name from api
     const response = await fetch("https://www.dnd5eapi.co/api/monsters");
     const data = await response.json();
     data.results.forEach((monster) => {
@@ -49,7 +51,8 @@ const query = async function () {
 };
 query();
 
-DOMSelectors.resetButton.addEventListener("click", function () {
+const monsterSelectionReset = function () {
+  DOMSelectors.resetButton.addEventListener("click", function () {
   //erases searched monster
   DOMSelectors.cardBox.firstChild.outerHTML = "";
   //resets monster selection
@@ -57,6 +60,8 @@ DOMSelectors.resetButton.addEventListener("click", function () {
   //resets search field
   DOMSelectors.searchBox.value = "";
 });
+};
+monsterSelectionReset();
 
 //Capitalizes strings
 String.prototype.capitalize = function () {
@@ -75,6 +80,7 @@ const search = function () {
       .toLowerCase();
     const searchQuery = async function () {
       try {
+        //takes search words from the searchbox, puts them through the api, and gets data on that monster
         const response = await fetch(
           `https://www.dnd5eapi.co/api/monsters/${searchWords}`
         );
@@ -215,13 +221,16 @@ const deleteMonster = function () {
 deleteMonster();
 
 //settingsbox add header and content to boxes
-DOMSelectors.settingCards.addEventListener("click", function (e) {
-  if (e.target.innerHTML === "Choose setting") {
-    DOMSelectors.settingInput.innerHTML =
-      e.target.parentElement.firstChild.nextElementSibling.innerHTML;
-  }
-  console.log(e.target.parentElement.firstChild.nextElementSibling.innerHTML);
-});
+const chooseSetting = function () {
+  DOMSelectors.settingCards.addEventListener("click", function (e) {
+    if (e.target.innerHTML === "Choose setting") {
+      DOMSelectors.settingInput.innerHTML =
+        e.target.parentElement.firstChild.nextElementSibling.innerHTML;
+    }
+  });
+};
+chooseSetting();
+
 //character level insert
 const levelArray = [
   1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
@@ -232,19 +241,30 @@ levelArray.forEach((level) => {
     `<option value="">${level}</option>`
   );
 });
-//characterbox add/delete characters js
-DOMSelectors.characterButton.addEventListener("click", function (e) {
-  const character = DOMSelectors.character;
-  const characterClone = character.cloneNode(true);
-  DOMSelectors.characterAndAdd.append(characterClone);
-});
-DOMSelectors.characterBox.addEventListener("click", function (e) {
-  if (e.target.innerHTML === "Delete character") {
-    e.target.parentElement.parentElement.outerHTML = "";
-  }
-});
-//api stuff for race and class
-const race = function () {
+//characterbox add/delete characters 
+const addCharacter = function () {
+  DOMSelectors.characterButton.addEventListener("click", function () {
+    //copies and appends original character
+    const character = DOMSelectors.character;
+    const characterClone = character.cloneNode(true);
+    DOMSelectors.characterAndAdd.append(characterClone);
+    //erases information in clone from original character
+    characterClone.children[0].children[0].children[0].children[1].textContent = "";
+    characterClone.children[1].children[1].textContent = "";
+  });
+}
+addCharacter();
+
+const deleteCharacter = function () {
+  DOMSelectors.characterBox.addEventListener("click", function (e) {
+    if (e.target.innerHTML === "Delete character") {
+      e.target.parentElement.parentElement.outerHTML = "";
+    }
+  });
+}
+deleteCharacter();
+
+//inserting races and classes from api
   const raceInsert = async function () {
     try {
       const response = await fetch(`https://www.dnd5eapi.co/api/races`);
@@ -261,20 +281,7 @@ const race = function () {
     }
   };
   raceInsert();
-};
-race();
 
-const moreRace = function () {
-  const moreRaceInsert = async function () {
-    try {
-      const response = await fetch(``);
-      const moreRaceData = await response.json();
-    } catch (error) {}
-  };
-  moreRaceInsert();
-};
-moreRace();
-const characterClass = function () {
   const classInsert = async function () {
     try {
       const response = await fetch(`https://www.dnd5eapi.co/api/classes`);
@@ -291,5 +298,3 @@ const characterClass = function () {
     }
   };
   classInsert();
-};
-characterClass();
