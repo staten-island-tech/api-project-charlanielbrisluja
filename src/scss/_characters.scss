@@ -1,6 +1,6 @@
 .character {
   border: black solid 0.1rem;
-  padding: 1rem;
+  padding: 2rem;
   margin-top: 2rem;
   background: var(--lightorange-color);
 }
@@ -28,6 +28,11 @@
 .character-labels {
   display: flex;
 }
+.character-and-add {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
 .character-input {
   min-height: 2rem;
   min-width: 20rem;
@@ -41,7 +46,7 @@
 .class-select,
 .level-select,
 .character-input {
-  margin-right: 7rem;
+  margin-right: 4rem;
 }
 //css for add button, doesn't matter as there is no add button rn
 .button-box {
@@ -70,4 +75,11 @@
 .level-label-box {
   display: flex;
   flex-direction: column;
+}
+
+@media only screen and (max-width: 768px) {
+  .character-and-add {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
 }
